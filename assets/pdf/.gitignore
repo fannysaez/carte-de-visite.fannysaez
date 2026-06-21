@@ -4,5 +4,11 @@
 # Sauf le fichier .gitignore lui-même
 !.gitignore
 
-# Et sauf ton brief de carte de visite (on échappe les espaces avec des antislashs)
+# Brief Simplon
 !\[Positionnement\]\ Brief\ projet\ carte\ de\ visite.pdf
+
+# Dossier de présentation jury
+!README.md
+!README.pdf
+!presentation-jury.html
+!presentation-jury.pdf
