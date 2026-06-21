@@ -1,11 +1,477 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Fanny Saez" />
+    <meta name="description" content="Fanny Saez, développeuse web &amp; mobile full stack. Candidate CDA Simplon Clermont-Ferrand 2026. React, Next.js, PHP, Symfony, Figma."/>
     
-</body>
+    <link rel="canonical" href="https://carte-de-visite-fannysaez.vercel.app/"/>
+    
+    <title>Fanny Saez — Développeuse Web &amp; Mobile</title>
+
+    <link rel="preload" href="assets/img/photo-fanny.webp" as="image">
+    <link rel="preload" href="assets/fonts/raleway-v37-latin-700.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="assets/fonts/raleway-v37-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
+
+    <link rel="stylesheet" href="styles/globals.css">
+    <link rel="stylesheet" href="styles/components.css">
+    <link rel="stylesheet" href="styles/utilities.css">
+
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+    <link rel="preconnect" href="https://api.iconify.design">
+
+    <!-- Iconify web component — remplace Font Awesome (non bloquant) -->
+    <script src="https://cdn.jsdelivr.net/npm/iconify-icon@1/dist/iconify-icon.min.js" defer></script>
+
+  </head>
+  <body>
+
+   <div class="bg-overlay" aria-hidden="true"></div>
+
+    <div id="page">
+
+        <div class="scene">
+            <div class="card-3d"
+                 id="card"
+                 role="group"
+                 tabindex="0"
+                 aria-label="Carte de visite interactive — appuyer pour retourner">
+
+                <!-- ==================== RECTO ==================== -->
+                <div class="face face--front" role="region" aria-label="Recto — identité">
+
+                    <div class="ribbon" role="img" aria-label="Titre Professionnel Bac+2 Niveau 5 — Simplon oct. 2025" data-tooltip="Bac+2 · Niveau 5 · Simplon oct. 2025">
+                        <iconify-icon icon="fa6-solid:award" aria-hidden="true"></iconify-icon> Titre Pro
+                    </div>
+
+                    <div class="face-inner">
+
+                        <!-- Colonne gauche : photo + QR codes + contact -->
+                        <div class="col-left">
+                            <div class="avatar-wrap">
+                                <img src="assets/img/photo-fanny.webp"
+                                     alt="Portrait de Fanny Saez, développeuse web et mobile"
+                                     class="avatar"
+                                     width="240" height="240">
+                            </div>
+                            <div class="qr-group">
+                                <figure class="qr-item">
+                                    <a href="https://fannysaez.github.io/my_portfolio/"
+                                       target="_blank"
+                                       rel="noopener noreferrer"
+                                       aria-label="Ouvrir le portfolio de Fanny Saez">
+                                        <img
+                                            src="assets/img/qr-portfolio.svg"
+                                            alt="QR Code — Portfolio"
+                                            class="qr-code"
+                                            width="108" height="108"
+                                            fetchpriority="high"
+                                        >
+                                    </a>
+                                    <figcaption>Portfolio</figcaption>
+                                </figure>
+                            </div>
+                            <div class="social-bar" role="group" aria-label="Coordonnées">
+                                <a href="mailto:fanny.saez.0486@gmail.com"
+                                   class="social-btn"
+                                   aria-label="Envoyer un e-mail à Fanny Saez"
+                                   data-tooltip="fanny.saez.0486@gmail.com">
+                                    <iconify-icon icon="fa6-solid:envelope" aria-hidden="true"></iconify-icon>
+                                </a>
+                                <a href="tel:+33661051505"
+                                   class="social-btn"
+                                   aria-label="Appeler Fanny Saez au 06 61 05 15 05"
+                                   data-tooltip="06.61.05.15.05">
+                                    <iconify-icon icon="fa6-solid:phone" aria-hidden="true"></iconify-icon>
+                                </a>
+                                <span class="social-btn"
+                                      role="img"
+                                      aria-label="Localisation : Clermont-Ferrand (63)"
+                                      data-tooltip="Clermont-Ferrand (63)">
+                                    <iconify-icon icon="fa6-solid:location-dot" aria-hidden="true"></iconify-icon>
+                                </span>
+                            </div>
+                        </div>
+
+                        <!-- Colonne droite : infos -->
+                        <div class="col-right">
+                            <div class="identity">
+                                <h1>Fanny <span class="accent">Saez</span></h1>
+                                <p class="tagline">Développeuse Web &amp; Mobile</p>
+                                <p class="traits">Créative &middot; Curieuse &middot; Rigoureuse &middot; Autonome &middot; Organisée</p>
+                            </div>
+                            <figure class="qr-item qr-item--center">
+                                <a href="https://fannysaez.github.io/cv-en-ligne/"
+                                   target="_blank"
+                                   rel="noopener noreferrer"
+                                   aria-label="Ouvrir le CV en ligne de Fanny Saez">
+                                    <img
+                                        src="assets/img/qr-cv.svg"
+                                        alt="QR Code — CV en ligne"
+                                        class="qr-code qr-code--lg"
+                                        width="100" height="100"
+                                        loading="lazy"
+                                    >
+                                </a>
+                                <figcaption>CV en ligne</figcaption>
+                            </figure>
+                            <ul class="passion-list" aria-label="Centres d'intérêt">
+                                <li>Informatique</li>
+                                <li>Natation</li>
+                                <li>Impression 3D</li>
+                                <li>Graphisme &amp; Scrap</li>
+                            </ul>
+                        </div>
+
+                    </div>
+                    <div class="card-footer">
+                        &copy; 2026 Fanny Saez &mdash; Carte de visite
+                    </div>
+                </div>
+
+                <!-- ==================== VERSO ==================== -->
+                <div class="face face--back" role="region" aria-label="Verso — compétences et profils">
+                    <div class="face-inner face-inner--back">
+
+                        <!-- Colonne gauche : à propos + CDA -->
+                        <div class="col-left">
+
+                            <section id="about" aria-labelledby="about-title">
+                                <h2 id="about-title">
+                                    <iconify-icon icon="fa6-solid:user" aria-hidden="true"></iconify-icon> À propos
+                                    <button class="sec-toggle" aria-expanded="false" aria-label="Afficher la section À propos" aria-controls="about-list"><iconify-icon icon="fa6-solid:chevron-down" aria-hidden="true"></iconify-icon></button>
+                                </h2>
+                                <ul id="about-list" class="reason-list">
+                                    <li class="acc-item">
+                                        <div class="acc-header">
+                                            <strong class="acc-title">Développeuse Web &amp; Mobile</strong>
+                                            <button class="accordion-toggle" aria-expanded="false" aria-label="Développer">+</button>
+                                        </div>
+                                        <div class="acc-body hidden"
+                                             data-long="Titulaire du Titre Professionnel Développeuse Web et Web Mobile (niveau 5, Bac+2), obtenu chez Simplon en octobre 2025. Formation intensive couvrant le front-end, le back-end, les API REST et les frameworks React et Symfony, avec une attention portée à l'accessibilité et aux bonnes pratiques.">
+                                            Titre Pro DWWM (Bac+2, niv.&nbsp;5) obtenu chez Simplon, oct.&nbsp;2025 — formation front-end, back-end, API REST, React &amp; Symfony.
+                                        </div>
+                                        <button class="acc-more-btn" type="button">Plus d'infos →</button>
+                                    </li>
+                                    <li class="acc-item">
+                                        <div class="acc-header">
+                                            <strong class="acc-title">Autodidacte passionnée</strong>
+                                            <button class="accordion-toggle" aria-expanded="false" aria-label="Développer">+</button>
+                                        </div>
+                                        <div class="acc-body hidden"
+                                             data-long="Mon parcours est avant tout autodidacte : HTML/CSS appris seule avant ma reconversion, Photoshop et Illustrator pour le graphisme, impression 3D via ma Bambu Lab (conception de fichiers STL, pièces techniques). Cette polyvalence m'aide à aborder chaque projet web avec une vision à la fois créative et technique.">
+                                            Profil couteau suisse : code, graphisme (Photoshop, Illustrator), impression 3D (Bambu Lab, fichiers STL) &amp; scrapbooking — créativité et rigueur technique réunies.
+                                        </div>
+                                        <button class="acc-more-btn" type="button">Plus d'infos →</button>
+                                    </li>
+                                    <li class="acc-item">
+                                        <div class="acc-header">
+                                            <strong class="acc-title">Engagée &amp; Collaborative</strong>
+                                            <button class="accordion-toggle" aria-expanded="false" aria-label="Développer Hackathon">+</button>
+                                        </div>
+                                        <div class="acc-body hidden"
+                                             data-long="En équipe de 4, cadrage du besoin, wireframes, développement et livraison en 36h. J'ai pris en charge l'intégration front-end et la coordination des livrables. Une expérience qui m'a confirmé que je travaille bien sous pression, en équipe, avec méthode.">
+                                            Hackathon 36h — prototype écoresponsable &amp; accessible conçu en équipe : intégration front-end et coordination des livrables sous pression.
+                                        </div>
+                                        <button class="acc-more-btn" type="button">Plus d'infos →</button>
+                                    </li>
+                                    <li class="acc-item">
+                                        <div class="acc-header">
+                                            <strong class="acc-title">Curieuse &amp; rigoureuse</strong>
+                                            <button class="accordion-toggle" aria-expanded="false" aria-label="Développer">+</button>
+                                        </div>
+                                        <div class="acc-body hidden"
+                                             data-long="Je vais au fond des choses : comprendre le pourquoi d'un bug avant de le contourner. Rigueur dans le code (ESLint, Prettier, tests), dans l'accessibilité (WCAG, ARIA), et dans mes loisirs créatifs — modélisation 3D précise, scrapbooking méthodique.">
+                                            J'aime donner vie à des idées complexes, virtuel comme matériel — code rigoureux (ESLint, tests, ARIA) et modélisation 3D précise.
+                                        </div>
+                                        <button class="acc-more-btn" type="button">Plus d'infos →</button>
+                                    </li>
+                                </ul>
+                            </section>
+
+                            <section id="simplon" aria-labelledby="simplon-title">
+                                <h2 id="simplon-title">
+                                    <iconify-icon icon="fa6-solid:seedling" aria-hidden="true"></iconify-icon> Pourquoi la CDA ?
+                                    <button class="sec-toggle" aria-expanded="false" aria-label="Afficher la section Pourquoi la CDA" aria-controls="simplon-list"><iconify-icon icon="fa6-solid:chevron-down" aria-hidden="true"></iconify-icon></button>
+                                </h2>
+                                <ul id="simplon-list" class="reason-list">
+                                    <li class="acc-item">
+                                        <div class="acc-header">
+                                            <strong class="acc-title">La conception</strong>
+                                            <button class="accordion-toggle" aria-expanded="false" aria-label="Développer La conception">+</button>
+                                        </div>
+                                        <div class="acc-body hidden"
+                                             data-long="En impression 3D on valide le fichier avant de lancer. Je veux appliquer la même logique : patterns de conception, UML, dossiers de conception solides. La CDA, c'est apprendre à penser l'architecture avant d'écrire une ligne de code.">
+                                            Comme en impression 3D, je veux valider l'architecture avant de coder : patterns, UML, dossiers solides — penser avant d'écrire.
+                                        </div>
+                                        <button class="acc-more-btn" type="button">Plus d'infos →</button>
+                                    </li>
+                                    <li class="acc-item">
+                                        <div class="acc-header">
+                                            <strong class="acc-title">L'évolution</strong>
+                                            <button class="accordion-toggle" aria-expanded="false" aria-label="Développer L'évolution">+</button>
+                                        </div>
+                                        <div class="acc-body hidden"
+                                             data-long="Stage freelance chez Alexis Delecroix (2,5 mois) : application web fullstack Next.js — front &amp; back-end (React, API Next.js), PostgreSQL via Neon avec Prisma ORM, authentification JWT/bcrypt, déploiement Vercel. Gérer un projet complet en autonomie m'a donné envie d'aller plus loin. La CDA formalise exactement ce que j'ai commencé à pratiquer.">
+                                            Mon stage freelance (Next.js, PostgreSQL/Neon, Vercel) m'a donné l'envie de gérer des applications complètes de A&nbsp;à&nbsp;Z en autonomie.
+                                        </div>
+                                        <button class="acc-more-btn" type="button">Plus d'infos →</button>
+                                    </li>
+                                    <li class="acc-item">
+                                        <div class="acc-header">
+                                            <strong class="acc-title">L'écosystème</strong>
+                                            <button class="accordion-toggle" aria-expanded="false" aria-label="Développer L'écosystème">+</button>
+                                        </div>
+                                        <div class="acc-body hidden"
+                                             data-long="Simplon m'a appris à apprendre vite, à chercher, à partager. Pédagogie par le projet, bienveillance, intervenants du terrain. Continuer la CDA à Clermont-Ferrand, c'est rester dans cet environnement stimulant tout en montant en compétences sur la conception d'applications d'envergure.">
+                                            Poursuivre avec Simplon, c'est rester dans un écosystème bienveillant et orienté terrain, et continuer à apprendre par le projet au sein d'une communauté de créateurs.
+                                        </div>
+                                        <button class="acc-more-btn" type="button">Plus d'infos →</button>
+                                    </li>
+                                    <li class="acc-item">
+                                        <div class="acc-header">
+                                            <strong class="acc-title">Et après ?</strong>
+                                            <button class="accordion-toggle" aria-expanded="false" aria-label="Développer Et après">+</button>
+                                        </div>
+                                        <div class="acc-body hidden"
+                                             data-long="En mars 2026, accompagnée par BGE AURA, je structurais Activ'Créa : une micro-entreprise multi-activités combinant développement web (sites, apps sur mesure), identité visuelle, supports de communication et impression 3D. Ma polyvalence, concrétisée en projet. J'ai mis ce projet en pause pour la CDA — pas par défaut, par stratégie : maîtriser la conception applicative avant de lancer cette activité sur des bases solides et pérennes.">
+                                            Activ'Créa (BGE AURA) en pause — micro-entreprise multi-activités dev&nbsp;web, design &amp; 3D. La CDA d'abord, pour partir sur des bases solides.
+                                        </div>
+                                        <button class="acc-more-btn" type="button">Plus d'infos →</button>
+                                    </li>
+                                </ul>
+                            </section>
+
+                            <section id="motivation" aria-labelledby="motivation-title">
+                                <h2 id="motivation-title">
+                                    <iconify-icon icon="fa6-solid:fire" aria-hidden="true"></iconify-icon> Motivation
+                                    <button class="sec-toggle" aria-expanded="false" aria-label="Afficher la section Motivation" aria-controls="motivation-list"><iconify-icon icon="fa6-solid:chevron-down" aria-hidden="true"></iconify-icon></button>
+                                </h2>
+                                <ul id="motivation-list" class="reason-list">
+                                    <li class="acc-item">
+                                        <div class="acc-header">
+                                            <strong class="acc-title">Mon parcours</strong>
+                                            <button class="accordion-toggle" aria-expanded="false" aria-label="Développer Mon parcours">+</button>
+                                        </div>
+                                        <div class="acc-body hidden"
+                                             data-long="J'ai commencé à me former au développement web en 2017 (Vecteur Formation). La vie a fait ses choix. En 2023, j'ai repris seule — OpenClassrooms, Sololearn, des projets perso. Puis Simplon en 2024. Cette persistance n'est pas de la ténacité par obligation : c'est que le dev m'a toujours rappelée à lui.">
+                                            2017, 2023, 2024 — j'ai essayé, lâché, recommencé. L'envie n'est jamais partie.
+                                        </div>
+                                        <button class="acc-more-btn" type="button">Plus d'infos →</button>
+                                    </li>
+                                    <li class="acc-item">
+                                        <div class="acc-header">
+                                            <strong class="acc-title">Mon fil conducteur : le numérique</strong>
+                                            <button class="accordion-toggle" aria-expanded="false" aria-label="Développer Mon fil conducteur">+</button>
+                                        </div>
+                                        <div class="acc-body hidden"
+                                             data-long="Avant de coder, je créais déjà avec les outils numériques : PAO, identité visuelle pour l'asso Zénith Aulnat, ma micro-entreprise &quot;La créa qui te va&quot;. Le passage au développement web n'est pas une rupture — c'est une évolution naturelle de ce fil créatif qui me définit depuis plus de 10 ans.">
+                                            Graphiste bénévole depuis 2012, PAO 2013, papeterie perso — le numérique, c'est mon fil rouge depuis toujours.
+                                        </div>
+                                        <button class="acc-more-btn" type="button">Plus d'infos →</button>
+                                    </li>
+                                    <li class="acc-item">
+                                        <div class="acc-header">
+                                            <strong class="acc-title">Autonomie</strong>
+                                            <button class="accordion-toggle" aria-expanded="false" aria-label="Développer Autonomie">+</button>
+                                        </div>
+                                        <div class="acc-body hidden"
+                                             data-long="Bénévolat graphiste (asso Zénith, depuis 2012), autoformation (OpenClassrooms, Sololearn), puis Activ'Créa accompagnée par BGE AURA (mars-avr. 2026) — j'ai toujours initié avant qu'on me l'impose. Ce mode autonome n'est pas une compétence que j'apprends : c'est ma façon naturelle d'avancer. En dev, ça se traduit par de la proactivité, de la débrouille, et l'envie d'aller chercher ce que je ne sais pas encore.">
+                                            Bénévolat, autoformation, Activ'Créa (BGE AURA) — construire seule sans attendre, c'est ma façon naturelle d'avancer.
+                                        </div>
+                                        <button class="acc-more-btn" type="button">Plus d'infos →</button>
+                                    </li>
+                                </ul>
+                            </section>
+
+                            <!-- Icônes passions flottantes — desktop/tablette -->
+                            <div class="desk-deco" aria-hidden="true">
+                                <div class="deco-wrap">
+                                    <span class="passion-badge pb-1" data-tooltip="Natation"><iconify-icon icon="fa6-solid:person-swimming"></iconify-icon></span>
+                                    <span class="passion-badge pb-2" data-tooltip="Impression 3D"><iconify-icon icon="fa6-solid:cube"></iconify-icon></span>
+                                    <span class="passion-badge pb-3" data-tooltip="Graphisme"><iconify-icon icon="fa6-solid:palette"></iconify-icon></span>
+                                    <span class="passion-badge pb-4" data-tooltip="Scrapbooking"><iconify-icon icon="fa6-solid:scissors"></iconify-icon></span>
+                                    <span class="passion-badge pb-5" data-tooltip="Développement"><iconify-icon icon="fa6-solid:code"></iconify-icon></span>
+                                </div>
+                            </div>
+
+                            <!-- Badge disponibilité — desktop/tablette -->
+                            <div class="verso-status" aria-label="Disponibilité">
+                                <div class="status-left">
+                                    <span class="status-dot" aria-hidden="true"></span>
+                                    <span class="status-label">Disponible</span>
+                                </div>
+                                <span class="status-date">Rentrée Juin 2026</span>
+                            </div>
+
+                        </div>
+
+                        <!-- Décoration mobile uniquement — constellation + typewriter -->
+                        <div class="mob-deco" aria-hidden="true">
+                            <span class="mob-dot"></span>
+                            <span class="mob-dot"></span>
+                            <span class="mob-dot"></span>
+                            <span class="mob-dot"></span>
+                            <span class="mob-dot"></span>
+                            <span class="mob-dot"></span>
+                            <span class="typewriter-wrap"><span class="typewriter">Coder&nbsp;&middot;&nbsp;Concevoir&nbsp;&middot;&nbsp;Construire</span></span>
+                        </div>
+
+                        <!-- Colonne droite : stack + profils -->
+                        <div class="col-right">
+
+                            <section id="skills" aria-labelledby="skills-title">
+                                <h2 id="skills-title">
+                                    <iconify-icon icon="fa6-solid:laptop-code" aria-hidden="true"></iconify-icon> Stack technique
+                                </h2>
+                                <div class="tab-widget">
+                                    <div class="skill-tabs" role="tablist" aria-label="Catégories de compétences">
+                                        <button class="skill-tab active"
+                                                data-filter="front"
+                                                role="tab"
+                                                aria-selected="true"
+                                                aria-controls="skill-panel-content">Front</button>
+                                        <button class="skill-tab"
+                                                data-filter="back"
+                                                role="tab"
+                                                aria-selected="false"
+                                                aria-controls="skill-panel-content">Back</button>
+                                        <button class="skill-tab"
+                                                data-filter="outils"
+                                                role="tab"
+                                                aria-selected="false"
+                                                aria-controls="skill-panel-content">Outils</button>
+                                        <button class="skill-tab"
+                                                data-filter="design"
+                                                role="tab"
+                                                aria-selected="false"
+                                                aria-controls="skill-panel-content">Design</button>
+                                    </div>
+                                    <div class="skill-panel"
+                                         id="skill-panel-content"
+                                         role="tabpanel"
+                                         aria-label="Compétences techniques">
+                                        <ul class="tag-list">
+
+                                            <li data-cat="front"><span>HTML5</span></li>
+                                            <li data-cat="front"><span>CSS3</span></li>
+                                            <li data-cat="front"><span>Sass</span></li>
+                                            <li data-cat="front"><span>JavaScript</span></li>
+                                            <li data-cat="front"><span>React</span></li>
+                                            <li data-cat="front"><span>Next.js</span></li>
+                                            <li data-cat="front"><span>Bootstrap</span></li>
+                                            <li data-cat="front"><span>Vite</span></li>
+                                            <li data-cat="back"><span>PHP</span></li>
+                                            <li data-cat="back"><span>Symfony</span></li>
+                                            <li data-cat="back"><span>MySQL</span></li>
+                                            <li data-cat="back"><span>PostgreSQL</span></li>
+                                            <li data-cat="back"><span>Prisma</span></li>
+                                            <li data-cat="back"><span>Supabase</span></li>
+                                            <li data-cat="back"><span>Neon</span></li>
+                                            <li data-cat="back"><span>Stripe</span></li>
+                                            <li data-cat="back"><span>JWT</span></li>
+                                            <li data-cat="outils"><span>WordPress</span></li>
+                                            <li data-cat="outils"><span>Git</span></li>
+                                            <li data-cat="outils"><span>Docker</span></li>
+                                            <li data-cat="outils"><span>Vercel</span></li>
+                                            <li data-cat="outils"><span>Netlify</span></li>
+                                            <li data-cat="outils"><span>Trello</span></li>
+                                            <li data-cat="outils"><span>Notion</span></li>
+                                            <li data-cat="outils"><span>EmailJS</span></li>
+                                            <li data-cat="outils"><span>Brevo</span></li>
+                                            <li data-cat="outils"><span>Resend</span></li>
+                                            <li data-cat="outils"><span>Calendly</span></li>
+                                            <li data-cat="outils"><span>Cloudinary</span></li>
+                                            <li data-cat="outils"><span>Node.js</span></li>
+                                            <li data-cat="outils"><span>npm</span></li>
+                                            <li data-cat="outils"><span>Composer</span></li>
+                                            <li data-cat="outils"><span>Postman</span></li>
+                                            <li data-cat="outils"><span>FileZilla</span></li>
+                                            <li data-cat="outils"><span>Yarn</span></li>
+                                            <li data-cat="outils"><span>ESLint</span></li>
+                                            <li data-cat="outils"><span>Prettier</span></li>
+                                            <li data-cat="outils"><span>Vitest</span></li>
+                                            <li data-cat="outils"><span>Playwright</span></li>
+                                            <li data-cat="outils"><span>VSCode</span></li>
+                                            <li data-cat="design"><span>Figma</span></li>
+                                            <li data-cat="design"><span>Illustrator</span></li>
+                                            <li data-cat="design"><span>Photoshop</span></li>
+                                            <li data-cat="design"><span>InDesign</span></li>
+                                            <li data-cat="design"><span>Adobe XD</span></li>
+                                            <li data-cat="design"><span>Silhouette</span></li>
+                                        </ul>
+                                        <div class="skill-pagination" role="navigation" aria-label="Pagination des compétences">
+                                            <button class="skill-prev" aria-label="Page précédente">&#8249;</button>
+                                            <span class="skill-page-info" aria-live="polite"></span>
+                                            <button class="skill-next" aria-label="Page suivante">&#8250;</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+
+                            <section id="profiles" aria-labelledby="profiles-title">
+                                <h2 id="profiles-title">
+                                    <iconify-icon icon="fa6-solid:link" aria-hidden="true"></iconify-icon> Profils en ligne
+                                </h2>
+                                <ul class="profile-list">
+                                    <li>
+                                        <a href="https://github.com/fannysaez" target="_blank" rel="noopener noreferrer" aria-label="GitHub de Fanny Saez (nouvel onglet)" data-tooltip="GitHub">
+                                            <iconify-icon icon="fa6-brands:github" aria-hidden="true"></iconify-icon><span>GitHub</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://www.linkedin.com/in/fannysaez/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn de Fanny Saez (nouvel onglet)" data-tooltip="LinkedIn">
+                                            <iconify-icon icon="fa6-brands:linkedin-in" aria-hidden="true"></iconify-icon><span>LinkedIn</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://www.instagram.com/designdevwebdiy/" target="_blank" rel="noopener noreferrer" aria-label="Instagram de Fanny Saez (nouvel onglet)" data-tooltip="Instagram">
+                                            <iconify-icon icon="fa6-brands:instagram" aria-hidden="true"></iconify-icon><span>Instagram</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://fannysaez.github.io/my_portfolio/" target="_blank" rel="noopener noreferrer" aria-label="Portfolio de Fanny Saez (nouvel onglet)" data-tooltip="Portfolio">
+                                            <iconify-icon icon="fa6-solid:briefcase" aria-hidden="true"></iconify-icon><span>Portfolio</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://fannysaez.github.io/cv-en-ligne/" target="_blank" rel="noopener noreferrer" aria-label="CV en ligne de Fanny Saez (nouvel onglet)" data-tooltip="CV en ligne">
+                                            <iconify-icon icon="fa6-solid:file-lines" aria-hidden="true"></iconify-icon><span>CV en ligne</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://bambucalc.netlify.app/" target="_blank" rel="noopener noreferrer" aria-label="Projet BambuCalc de Fanny Saez (nouvel onglet)" data-tooltip="BambuCalc">
+                                            <iconify-icon icon="fa6-solid:cube" aria-hidden="true"></iconify-icon><span>BambuCalc</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </section>
+
+                        </div>
+
+                    </div>
+                    <div class="card-footer">
+                        &copy; 2026 Fanny Saez &mdash; Carte de visite
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+    <script src="script.js?v=2"></script>
+
+    <dialog id="acc-modal" aria-modal="true" aria-labelledby="modal-title">
+        <div class="modal-inner">
+            <div class="modal-header">
+                <h3 id="modal-title" class="modal-title"></h3>
+                <button class="modal-close" aria-label="Fermer la fenêtre">&#x2715;</button>
+            </div>
+            <p id="modal-text" class="modal-text"></p>
+        </div>
+    </dialog>
+
+  </body>
 </html>
