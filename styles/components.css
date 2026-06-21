@@ -595,7 +595,8 @@ h2 i {
    ============================================= */
 .acc-item {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    flex-wrap: wrap;
     gap: 0.3rem;
 }
 
@@ -624,16 +625,15 @@ h2 i {
 }
 
 .acc-body {
+    order: 1;
+    flex: 0 1 auto;
+    min-width: 0;
     font-size: 0.75rem;
     font-style: italic;
     color: var(--white);
     opacity: 0.85;
     line-height: 1.45;
     transition: opacity 0.15s ease;
-    display: -webkit-box;
-    -webkit-line-clamp: 1;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
 }
 
 .acc-body.hidden {
@@ -914,22 +914,77 @@ h2 i {
    ============================================= */
 .acc-more-btn {
     display: none;
-    align-self: flex-end;
-    background: none;
-    border: none;
+    order: 2;
+    align-self: flex-start;
+    margin-top: -1px;
+    position: relative;
+    background: var(--teal-10);
+    border: 1px solid var(--teal-28);
+    border-radius: 50%;
+    width: 22px;
+    height: 22px;
+    min-width: 22px;
     color: var(--teal);
-    font-size: 0.72rem;
-    font-weight: 700;
+    font-size: 0.8rem;
+    align-items: center;
+    justify-content: center;
     cursor: pointer;
-    padding: 0.1rem 0;
-    font-family: 'Raleway', sans-serif;
-    letter-spacing: 0.04em;
-    transition: opacity 0.2s ease;
+    padding: 0;
+    flex-shrink: 0;
+    transition: background 0.2s ease, border-color 0.2s ease;
 }
 
 .acc-more-btn:hover {
-    opacity: 0.7;
-    text-decoration: underline;
+    background: var(--teal-28);
+    border-color: var(--teal);
+}
+
+.acc-more-btn::after {
+    content: 'Plus d\2019infos';
+    position: absolute;
+    top: calc(100% + 8px);
+    left: 50%;
+    transform: translateX(-50%) translateY(4px);
+    background: rgba(8, 19, 30, 0.97);
+    color: var(--teal);
+    font-size: 0.62rem;
+    font-weight: 700;
+    font-family: 'Raleway', sans-serif;
+    white-space: nowrap;
+    padding: 0.3rem 0.65rem;
+    border-radius: 0.4rem;
+    border: 1px solid var(--teal-28);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+    z-index: 10;
+}
+
+.acc-more-btn:hover::after {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+}
+
+.acc-more-btn::before {
+    content: '';
+    position: absolute;
+    top: calc(100% + 3px);
+    left: 50%;
+    transform: translateX(-50%) translateY(4px);
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-bottom: 5px solid rgba(8, 19, 30, 0.97);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+    z-index: 11;
+}
+
+.acc-more-btn:hover::before {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
 }
 
 /* =============================================

@@ -13,6 +13,19 @@ function flipCard() {
 
 document.addEventListener("DOMContentLoaded", function () {
   /* =============================================
+       TRONCATURE JS DES ACC-BODY
+       ============================================= */
+  const TRUNC_LEN = 51;
+
+  document.querySelectorAll(".acc-body").forEach(function (body) {
+    const text = body.textContent.trim();
+    if (text.length <= TRUNC_LEN) return;
+    const cut = text.lastIndexOf(" ", TRUNC_LEN);
+    const trimmed = text.substring(0, cut > 0 ? cut : TRUNC_LEN).replace(/[,;.—–\-]+$/, "");
+    body.textContent = trimmed + " …";
+  });
+
+  /* =============================================
        DOM ELEMENTS
        ============================================= */
   // Éléments principaux utilisés dans l'interface.
@@ -30,7 +43,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const body = item.querySelector(".acc-body");
     const btn = item.querySelector(".acc-more-btn");
     if (!btn || !body) return;
-    btn.style.display = body.dataset.long ? "inline-flex" : "none";
+    btn.style.display = body.dataset.long ? "flex" : "none";
   }
 
   // Permet de retourner la carte au clic, sauf sur certains éléments interactifs.
