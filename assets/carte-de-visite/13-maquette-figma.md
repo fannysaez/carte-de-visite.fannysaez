@@ -19,25 +19,17 @@ Les captures ci-dessous illustrent les 3 breakpoints et les états clés de la c
 
 ## Tablette
 
-| Recto | Verso | Verso — À propos ouvert |
-|:---:|:---:|:---:|
-| <img src="../maquette-figma/Tablette/Tablette%20%E2%80%94%20Recto.webp" width="260" alt="Tablette — Recto"> | <img src="../maquette-figma/Tablette/Tablette%20%E2%80%94%20Verso.webp" width="260" alt="Tablette — Verso"> | <img src="../maquette-figma/Tablette/Tablette%20%E2%80%94%20Verso%20(%C3%80%20propos%20ouvert).webp" width="260" alt="Tablette — Verso ouvert"> |
-
-| Modale ⓘ ouverte | |
-|:---:|:---:|
-| <img src="../maquette-figma/Tablette/Tablette%20%E2%80%94%20Verso%20(Modale%20ouverte).webp" width="360" alt="Tablette — Modale"> | |
+| Recto | Verso | Verso — À propos ouvert | Modale ⓘ ouverte |
+|:---:|:---:|:---:|:---:|
+| <img src="../maquette-figma/Tablette/Tablette%20%E2%80%94%20Recto.webp" width="220" alt="Tablette — Recto"> | <img src="../maquette-figma/Tablette/Tablette%20%E2%80%94%20Verso.webp" width="220" alt="Tablette — Verso"> | <img src="../maquette-figma/Tablette/Tablette%20%E2%80%94%20Verso%20(%C3%80%20propos%20ouvert).webp" width="220" alt="Tablette — Verso ouvert"> | <img src="../maquette-figma/Tablette/Tablette%20%E2%80%94%20Verso%20(Modale%20ouverte).webp" width="220" alt="Tablette — Modale"> |
 
 ---
 
 ## Mobile
 
-| Recto | Verso | Verso — À propos ouvert |
-|:---:|:---:|:---:|
-| <img src="../maquette-figma/Mobile/Mobile%20%E2%80%94%20Recto.webp" width="200" alt="Mobile — Recto"> | <img src="../maquette-figma/Mobile/Mobile%20%E2%80%94%20Verso.webp" width="200" alt="Mobile — Verso"> | <img src="../maquette-figma/Mobile/Mobile%20%E2%80%94%20Verso%20(%C3%80%20propos%20ouvert).webp" width="200" alt="Mobile — Verso ouvert"> |
-
-| Modale ⓘ ouverte | |
-|:---:|:---:|
-| <img src="../maquette-figma/Mobile/Mobile%20%E2%80%94%20Verso%20(Modale%20ouverte).webp" width="280" alt="Mobile — Modale"> | |
+| Recto | Verso | Verso — À propos ouvert | Modale ⓘ ouverte |
+|:---:|:---:|:---:|:---:|
+| <img src="../maquette-figma/Mobile/Mobile%20%E2%80%94%20Recto.webp" width="170" alt="Mobile — Recto"> | <img src="../maquette-figma/Mobile/Mobile%20%E2%80%94%20Verso.webp" width="170" alt="Mobile — Verso"> | <img src="../maquette-figma/Mobile/Mobile%20%E2%80%94%20Verso%20(%C3%80%20propos%20ouvert).webp" width="170" alt="Mobile — Verso ouvert"> | <img src="../maquette-figma/Mobile/Mobile%20%E2%80%94%20Verso%20(Modale%20ouverte).webp" width="170" alt="Mobile — Modale"> |
 
 ---
 
