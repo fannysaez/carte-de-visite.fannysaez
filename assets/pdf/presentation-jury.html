@@ -1,0 +1,1260 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Présentation jury — Carte de visite · Fanny Saez</title>
+  <style>
+
+    /* ─── VARIABLES ─── */
+    :root {
+      --teal:   #1ebfc1;
+      --dark:   #08131e;
+      --dark2:  #0b1c2c;
+      --white:  #e6f2fb;
+      --muted:  #567585;
+      --r:      0.5rem;
+      --font:   'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+    }
+
+    /* ─── RESET ─── */
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    /* ─── BASE ─── */
+    html { font-size: 15px; }
+
+    body {
+      font-family: var(--font);
+      background: #f5f8fb;
+      color: #1a2636;
+      line-height: 1.6;
+    }
+
+    /* ─── PAGE A4 ─── */
+    .page {
+      width: 210mm;
+      min-height: 297mm;
+      padding: 8mm 15mm 10mm;
+      margin: 0 auto 12mm;
+      background: #fff;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.10);
+      position: relative;
+      page-break-after: always;
+    }
+
+    .page:last-child { page-break-after: auto; }
+
+    /* ─── HEADER ─── */
+    .doc-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-bottom: 6px;
+      border-bottom: 2px solid var(--teal);
+      margin-bottom: 18px;
+    }
+
+    .doc-header-left h1 {
+      font-size: 1.05rem;
+      font-weight: 800;
+      color: var(--dark2);
+      letter-spacing: 0.01em;
+    }
+
+    .doc-header-left h1 span { color: var(--teal); }
+
+    .doc-header-left p {
+      font-size: 0.68rem;
+      color: var(--muted);
+      margin-top: 1px;
+    }
+
+    .doc-header-right {
+      text-align: right;
+      font-size: 0.65rem;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 2px 8px;
+      border-radius: 20px;
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    .badge-teal { background: rgba(30, 191, 193, 0.12); color: var(--teal); border: 1px solid rgba(30, 191, 193, 0.35); }
+    .badge-green { background: rgba(34, 197, 94, 0.10); color: #16a34a; border: 1px solid rgba(34, 197, 94, 0.30); }
+
+    /* ─── SECTIONS ─── */
+    .section {
+      margin-bottom: 28px;
+    }
+
+    .section-title {
+      font-size: 0.68rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      color: var(--teal);
+      border-bottom: 1px solid rgba(30, 191, 193, 0.25);
+      padding-bottom: 6px;
+      margin-bottom: 14px;
+      break-after: avoid;
+    }
+
+    /* ─── INTRO BOX ─── */
+    .intro-box {
+      background: rgba(30, 191, 193, 0.05);
+      border: 1px solid rgba(30, 191, 193, 0.22);
+      border-left: 4px solid var(--teal);
+      border-radius: var(--r);
+      padding: 14px 18px;
+      font-size: 0.86rem;
+      line-height: 1.72;
+      color: #1a2636;
+    }
+
+    .intro-box strong { color: var(--teal); }
+
+    /* ─── GRILLE MÉTA ─── */
+    .meta-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+    }
+
+    .meta-card {
+      background: #f8fafc;
+      border: 1px solid #e2eaf2;
+      border-top: 3px solid var(--teal);
+      border-radius: var(--r);
+      padding: 14px 12px;
+      text-align: center;
+    }
+
+    .meta-card .label {
+      font-size: 0.62rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--muted);
+      margin-bottom: 6px;
+    }
+
+    .meta-card .value {
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--dark2);
+      line-height: 1.5;
+    }
+
+    .meta-card .value.score {
+      font-size: 1.2rem;
+      color: #16a34a;
+    }
+
+    /* ─── TABLEAU CONFORMITÉ ─── */
+    .conformite-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.83rem;
+    }
+
+    .conformite-table {
+      break-inside: avoid;
+    }
+
+    .conformite-table thead th {
+      background: rgba(30, 191, 193, 0.08);
+      color: var(--muted);
+      font-size: 0.62rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      padding: 6px 8px;
+      text-align: left;
+      border-bottom: 2px solid rgba(30, 191, 193, 0.25);
+    }
+
+    .conformite-table tbody tr {
+      border-bottom: 1px solid #edf2f7;
+    }
+
+    .conformite-table tbody tr:last-child { border-bottom: none; }
+
+    .conformite-table td {
+      padding: 6px 8px;
+      vertical-align: top;
+      font-size: 0.79rem;
+    }
+
+    .conformite-table td:first-child { width: 22px; text-align: center; font-size: 1rem; }
+    .conformite-table td:nth-child(2) { width: 34%; font-weight: 600; color: var(--dark2); }
+    .conformite-table td:nth-child(3) { color: #3a5068; }
+    .conformite-table td:nth-child(4) { font-family: 'Courier New', monospace; font-size: 0.71rem; color: #567585; white-space: nowrap; }
+
+    .ok  { color: #16a34a; font-weight: 800; font-size: 1.05rem; }
+
+    /* ─── EXPLICATION TERMES ─── */
+    .term-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+
+    .term-card {
+      background: #f8fafc;
+      border: 1px solid #e2eaf2;
+      border-radius: var(--r);
+      padding: 11px 13px;
+    }
+
+    .term-card h3 {
+      font-size: 0.78rem;
+      font-weight: 800;
+      color: var(--dark2);
+      margin-bottom: 5px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .term-icon {
+      display: inline-flex;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: rgba(30, 191, 193, 0.12);
+      border: 1px solid rgba(30, 191, 193, 0.3);
+      align-items: center;
+      justify-content: center;
+      font-size: 0.65rem;
+      font-weight: 800;
+      color: var(--teal);
+      flex-shrink: 0;
+    }
+
+    .term-card p {
+      font-size: 0.78rem;
+      color: #3a5068;
+      line-height: 1.55;
+    }
+
+    .term-card code {
+      font-family: 'Courier New', monospace;
+      font-size: 0.72rem;
+      background: rgba(30, 191, 193, 0.08);
+      border: 1px solid rgba(30, 191, 193, 0.2);
+      border-radius: 3px;
+      padding: 0 4px;
+      color: var(--teal);
+    }
+
+    /* ─── CRITÈRES ─── */
+    .critere-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 9px;
+    }
+
+    .critere-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      font-size: 0.83rem;
+      padding: 10px 14px;
+      border-radius: var(--r);
+      background: #f8fafc;
+      border: 1px solid #e2eaf2;
+    }
+
+    .critere-list li .check { color: #16a34a; font-weight: 800; font-size: 1.05rem; flex-shrink: 0; margin-top: 2px; }
+
+    .critere-list li .critere-label { font-weight: 700; color: var(--dark2); }
+
+    .critere-list li .critere-detail {
+      font-size: 0.75rem;
+      color: var(--muted);
+      margin-top: 3px;
+      display: block;
+      line-height: 1.55;
+    }
+
+    /* ─── BONUS ─── */
+    .bonus-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+    }
+
+    .bonus-card {
+      background: linear-gradient(135deg, rgba(30, 191, 193, 0.06) 0%, rgba(30, 191, 193, 0.02) 100%);
+      border: 1px solid rgba(30, 191, 193, 0.22);
+      border-radius: var(--r);
+      padding: 11px 13px;
+    }
+
+    .bonus-card h4 {
+      font-size: 0.72rem;
+      font-weight: 800;
+      color: var(--teal);
+      margin-bottom: 5px;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+
+    .bonus-card p {
+      font-size: 0.74rem;
+      color: #3a5068;
+      line-height: 1.55;
+    }
+
+    /* ─── ORGANISATION ─── */
+    .orga-steps {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 8px;
+    }
+
+    .orga-step {
+      text-align: center;
+      padding: 9px 8px;
+      background: #f8fafc;
+      border: 1px solid #e2eaf2;
+      border-radius: var(--r);
+    }
+
+    .orga-step .num {
+      display: inline-flex;
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      background: var(--teal);
+      color: #fff;
+      font-size: 0.72rem;
+      font-weight: 800;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 5px;
+    }
+
+    .orga-step p {
+      font-size: 0.72rem;
+      color: #3a5068;
+      line-height: 1.4;
+    }
+
+    /* ─── FOOTER ─── */
+    .doc-footer {
+      position: absolute;
+      bottom: 5mm;
+      left: 15mm;
+      right: 15mm;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.57rem;
+      color: var(--muted);
+      border-top: 1px solid #e2eaf2;
+      padding-top: 4px;
+    }
+
+    .doc-footer a { color: var(--teal); text-decoration: none; }
+
+    /* ─── ORGANISATION 2 JOURS ─── */
+    .orga-note {
+      background: rgba(30, 191, 193, 0.05);
+      border: 1px solid rgba(30, 191, 193, 0.22);
+      border-left: 4px solid var(--teal);
+      border-radius: var(--r);
+      padding: 8px 14px;
+      font-size: 0.8rem;
+      color: #1a2636;
+      margin-bottom: 12px;
+    }
+
+    .orga-note strong { color: var(--teal); }
+
+    .orga-days {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+
+    .orga-day-col {
+      background: #f8fafc;
+      border: 1px solid #e2eaf2;
+      border-radius: var(--r);
+      overflow: hidden;
+    }
+
+    .day-header {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 7px 12px;
+      background: rgba(30, 191, 193, 0.10);
+      border-bottom: 2px solid var(--teal);
+    }
+
+    .day-header--2 {
+      background: rgba(30, 191, 193, 0.06);
+      border-bottom-color: #0d9fa0;
+    }
+
+    .day-num {
+      font-size: 0.68rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--teal);
+    }
+
+    .day-theme {
+      font-size: 0.67rem;
+      color: var(--muted);
+      font-weight: 600;
+    }
+
+    .day-timeline {
+      padding: 10px 12px 8px;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .tl-item {
+      display: flex;
+      gap: 10px;
+      position: relative;
+      padding-bottom: 10px;
+    }
+
+    .tl-item:last-child { padding-bottom: 0; }
+
+    .tl-item:not(:last-child)::before {
+      content: '';
+      position: absolute;
+      left: 5px;
+      top: 14px;
+      bottom: 0;
+      width: 1px;
+      background: rgba(30, 191, 193, 0.25);
+    }
+
+    .tl-dot {
+      width: 11px;
+      height: 11px;
+      border-radius: 50%;
+      background: var(--teal);
+      border: 2px solid #fff;
+      box-shadow: 0 0 0 1px rgba(30, 191, 193, 0.4);
+      flex-shrink: 0;
+      margin-top: 3px;
+    }
+
+    .tl-dot--2 {
+      background: #0d9fa0;
+      box-shadow: 0 0 0 1px rgba(13, 159, 160, 0.4);
+    }
+
+    .tl-content {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .tl-moment {
+      display: block;
+      font-size: 0.6rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--muted);
+      margin-bottom: 1px;
+    }
+
+    .tl-content strong {
+      display: block;
+      font-size: 0.77rem;
+      font-weight: 800;
+      color: var(--dark2);
+      margin-bottom: 2px;
+    }
+
+    .tl-content p {
+      font-size: 0.72rem;
+      color: #3a5068;
+      line-height: 1.45;
+    }
+
+    .tl-content code {
+      font-family: 'Courier New', monospace;
+      font-size: 0.68rem;
+      background: rgba(30, 191, 193, 0.08);
+      border: 1px solid rgba(30, 191, 193, 0.2);
+      border-radius: 3px;
+      padding: 0 3px;
+      color: #0a8080;
+    }
+
+    /* ─── CODE BLOCKS ─── */
+    .code-grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+    }
+
+    .code-grid-3 {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 8px;
+    }
+
+    .code-block {
+      background: #0d1b2a;
+      border: 1px solid #1e3a50;
+      border-radius: var(--r);
+      overflow: hidden;
+    }
+
+    .code-label {
+      font-size: 0.6rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      padding: 4px 10px;
+    }
+
+    .html-label { background: rgba(239,108,0,0.15); color: #ef6c00; border-bottom: 1px solid rgba(239,108,0,0.25); }
+    .css-label  { background: rgba(30,191,193,0.12); color: var(--teal); border-bottom: 1px solid rgba(30,191,193,0.25); }
+    .js-label   { background: rgba(252,211,0,0.12); color: #b8960c; border-bottom: 1px solid rgba(252,211,0,0.20); }
+
+    .code-block pre {
+      margin: 0;
+      padding: 10px 12px;
+      font-family: 'Courier New', 'Consolas', monospace;
+      font-size: 0.67rem;
+      line-height: 1.65;
+      overflow: hidden;
+      background: #0d1b2a;
+    }
+
+    .code-block code {
+      font-family: inherit;
+      font-size: inherit;
+      background: none;
+      border: none;
+      padding: 0;
+      color: #c9d8e8;
+    }
+
+    .code-explain {
+      padding: 8px 12px 10px;
+      font-size: 0.68rem;
+      color: #7a9ab8;
+      line-height: 1.58;
+      border-top: 1px solid #1e3a50;
+      background: #0a1624;
+    }
+
+    /* Coloration syntaxique */
+    .tag  { color: #64b5f6; }       /* balises HTML   → bleu */
+    .attr { color: #80cbc4; }       /* attributs HTML → vert */
+    .val  { color: #a5d6a7; }       /* valeurs attr   → vert clair */
+    .cmt  { color: #546e7a; font-style: italic; }
+    .sel  { color: #80cbc4; }       /* sélecteur CSS  → teal */
+    .prop { color: #90caf9; }       /* propriété CSS  → bleu */
+    .val2 { color: #f48fb1; }       /* valeur CSS     → rose */
+    .at   { color: #ce93d8; }       /* @media, @key   → violet */
+    .cmt2 { color: #546e7a; font-style: italic; }
+    .js-kw { color: #ce93d8; }      /* const, if, let → violet */
+    .js-fn { color: #80cbc4; }      /* fonctions JS   → teal */
+
+    /* Pills */
+    .pill {
+      display: inline-block;
+      padding: 1px 6px;
+      border-radius: 10px;
+      font-size: 0.63rem;
+      font-weight: 700;
+      font-family: 'Courier New', monospace;
+      margin: 0 1px;
+    }
+
+    .html-pill { background: rgba(239,108,0,0.12); color: #ef6c00; border: 1px solid rgba(239,108,0,0.25); }
+    .css-pill  { background: rgba(30,191,193,0.10); color: var(--teal); border: 1px solid rgba(30,191,193,0.25); }
+    .js-pill   { background: rgba(252,211,0,0.10); color: #b8960c; border: 1px solid rgba(252,211,0,0.20); }
+    .attr-pill { background: rgba(128,203,196,0.10); color: #4db6ac; border: 1px solid rgba(128,203,196,0.25); }
+
+    .code-explain code {
+      font-family: 'Courier New', monospace;
+      font-size: 0.63rem;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 3px;
+      padding: 0 4px;
+      color: #c9d8e8;
+    }
+
+    /* ─── PRINT ─── */
+    @media print {
+      html { font-size: 13px; }
+      body { background: #fff; }
+      .page {
+        width: 100%;
+        min-height: auto;
+        margin: 0;
+        padding: 8mm 15mm 10mm;
+        box-shadow: none;
+      }
+    }
+
+  </style>
+</head>
+<body>
+
+<!-- ══════════ PAGE 1 ══════════ -->
+<div class="page">
+
+  <!-- HEADER -->
+  <header class="doc-header">
+    <div class="doc-header-left">
+      <h1>Fanny <span>Saez</span> — Carte de visite web</h1>
+      <p>Dossier de présentation · Entretien de sélection CDA · Simplon Clermont-Ferrand</p>
+    </div>
+    <div class="doc-header-right">
+      <strong>24 juin 2026</strong><br>
+      <span class="badge badge-teal">HTML5 · CSS3</span>&nbsp;
+      <span class="badge badge-green">✓ Conforme</span>
+    </div>
+  </header>
+
+  <!-- LE PROJET -->
+  <section class="section">
+    <div class="section-title">Le projet</div>
+    <div class="intro-box">
+      J'ai réalisé une <strong>carte de visite au format site web</strong> pour me présenter lors de l'entretien technique.
+      Le site contient deux faces : un <strong>recto</strong> avec mon identité, ma photo et mes centres d'intérêt,
+      et un <strong>verso</strong> avec mes compétences, les raisons pour lesquelles je candidature à la CDA et mes profils en ligne.
+      Il est accessible à l'adresse&nbsp;: <strong>carte-de-visite-fannysaez.vercel.app</strong>
+    </div>
+  </section>
+
+  <!-- INFOS CLÉS -->
+  <section class="section">
+    <div class="section-title">En un coup d'œil</div>
+    <div class="meta-grid">
+      <div class="meta-card">
+        <div class="label">Fichiers HTML</div>
+        <div class="value">1 fichier<br><small style="font-weight:400;color:#567585">index.html</small></div>
+      </div>
+      <div class="meta-card">
+        <div class="label">Fichiers CSS</div>
+        <div class="value">3 fichiers<br><small style="font-weight:400;color:#567585">globals · components · utilities</small></div>
+      </div>
+      <div class="meta-card">
+        <div class="label">Score Lighthouse</div>
+        <div class="value score">93–97 / 100</div>
+      </div>
+      <div class="meta-card">
+        <div class="label">Accessibilité</div>
+        <div class="value score">100 / 100</div>
+      </div>
+      <div class="meta-card">
+        <div class="label">Déployé sur</div>
+        <div class="value">Vercel<br><small style="font-weight:400;color:#567585">en ligne 24h/24</small></div>
+      </div>
+      <div class="meta-card">
+        <div class="label">Breakpoints</div>
+        <div class="value">3<br><small style="font-weight:400;color:#567585">Mobile · Tablette · Desktop</small></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONFORMITÉ AU BRIEF -->
+  <section class="section">
+    <div class="section-title">Conformité au brief — livrables</div>
+    <table class="conformite-table">
+      <thead>
+        <tr>
+          <th></th>
+          <th>Ce que demande le brief</th>
+          <th>Comment c'est fait</th>
+          <th>Dans le code</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><span class="ok">✓</span></td>
+          <td>Un fichier HTML pour la structure</td>
+          <td>Le fichier <em>index.html</em> contient toute la structure de la page</td>
+          <td>index.html</td>
+        </tr>
+        <tr>
+          <td><span class="ok">✓</span></td>
+          <td>Balise titre — nom et prénom</td>
+          <td>Balise <em>&lt;h1&gt;</em> affiche « Fanny Saez » en grand sur le recto</td>
+          <td>&lt;h1&gt;Fanny Saez&lt;/h1&gt;</td>
+        </tr>
+        <tr>
+          <td><span class="ok">✓</span></td>
+          <td>Balise image — avatar ou photo</td>
+          <td>Balise <em>&lt;img&gt;</em> avec ma photo en format WebP, avec texte alternatif</td>
+          <td>&lt;img src="photo-fanny.webp"&gt;</td>
+        </tr>
+        <tr>
+          <td><span class="ok">✓</span></td>
+          <td>Liste des raisons de rejoindre Simplon</td>
+          <td>Section « Pourquoi la CDA ? » avec une liste <em>&lt;ul&gt;</em> de 4 items : La conception · L'évolution · L'écosystème · Et après ?</td>
+          <td>&lt;ul id="simplon-list"&gt;</td>
+        </tr>
+        <tr>
+          <td><span class="ok">✓</span></td>
+          <td>Liste et liens — profils en ligne</td>
+          <td>Section « Profils en ligne » : liste <em>&lt;ul&gt;</em> avec 6 liens cliquables (GitHub, LinkedIn, Instagram, Portfolio, CV, BambuCalc)</td>
+          <td>&lt;ul class="profile-list"&gt;</td>
+        </tr>
+        <tr>
+          <td><span class="ok">✓</span></td>
+          <td>Un fichier CSS pour la mise en forme</td>
+          <td>3 fichiers CSS séparés par rôle : variables/polices, composants, responsive — plus lisible, plus maintenable</td>
+          <td>styles/*.css</td>
+        </tr>
+        <tr>
+          <td><span class="ok">✓</span></td>
+          <td>Au moins 1 règle CSS par balise HTML</td>
+          <td>Toutes les balises utilisées ont au moins une règle CSS : html, body, h1, h2, p, ul, li, a, img, figure, figcaption, section, strong, button, span, dialog…</td>
+          <td>globals.css + components.css</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- FOOTER PAGE 1 -->
+  <footer class="doc-footer">
+    <span>Fanny Saez — fanny.saez.0486@gmail.com — 06.61.05.15.05</span>
+    <span>Page 1 / 3</span>
+    <span><a href="https://carte-de-visite-fannysaez.vercel.app">carte-de-visite-fannysaez.vercel.app</a></span>
+  </footer>
+
+</div>
+
+
+<!-- ══════════ PAGE 2 ══════════ -->
+<div class="page">
+
+  <!-- HEADER PAGE 2 -->
+  <header class="doc-header">
+    <div class="doc-header-left">
+      <h1>Fanny <span>Saez</span> — Explication technique</h1>
+      <p>Ce que signifient les termes · Ce que j'ai réalisé · Comment je me suis organisée</p>
+    </div>
+    <div class="doc-header-right">
+      <strong>24 juin 2026</strong><br>
+      <span class="badge badge-teal">HTML5 · CSS3</span>
+    </div>
+  </header>
+
+  <!-- CE QUE ÇA VEUT DIRE -->
+  <section class="section">
+    <div class="section-title">Ce que signifient HTML5 et CSS3</div>
+    <div class="term-grid">
+      <div class="term-card">
+        <h3><span class="term-icon">H</span> HTML5 — la structure</h3>
+        <p>
+          HTML est le <strong>squelette</strong> du site. Chaque balise est une instruction qui dit au navigateur
+          quoi afficher. Par exemple, <code>&lt;h1&gt;</code> signifie « titre principal »,
+          <code>&lt;ul&gt;&lt;li&gt;</code> signifie « liste à puces »,
+          <code>&lt;img&gt;</code> signifie « affiche une image »,
+          <code>&lt;a&gt;</code> signifie « lien cliquable ».<br>
+          HTML définit <em>ce qu'il y a</em> sur la page, pas comment ça ressemble.
+        </p>
+      </div>
+      <div class="term-card">
+        <h3><span class="term-icon">C</span> CSS3 — la mise en forme</h3>
+        <p>
+          CSS est l'<strong>habillage</strong> du site. Il dit comment afficher ce que HTML décrit :
+          couleur, taille, police, espacement, animation, disposition.
+          Une règle CSS ressemble à <code>h1 { color: teal; font-size: 2rem; }</code> : on cible
+          une balise et on lui applique des propriétés. CSS3 apporte les <em>transitions</em>, les
+          <em>animations</em> et la <em>mise en page en grille</em>.
+        </p>
+      </div>
+      <div class="term-card">
+        <h3><span class="term-icon">≡</span> Balise sémantique</h3>
+        <p>
+          Une balise est « sémantique » quand son nom dit ce qu'elle contient.
+          <code>&lt;section&gt;</code> = une section thématique,
+          <code>&lt;figure&gt;</code> = une image avec légende,
+          <code>&lt;strong&gt;</code> = texte important.
+          Cela aide les moteurs de recherche et les outils d'accessibilité à comprendre la page.
+        </p>
+      </div>
+      <div class="term-card">
+        <h3><span class="term-icon">R</span> Responsive design</h3>
+        <p>
+          Le site s'adapte automatiquement à la taille de l'écran : téléphone, tablette, ordinateur.
+          En CSS, on utilise des <code>@media</code> (« règles conditionnelles ») qui activent
+          des styles différents selon la largeur de l'écran. Ma carte a 3 versions :
+          mobile ≤ 600 px, tablette ≤ 768 px, desktop.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CRITÈRES D'ÉVALUATION -->
+  <section class="section">
+    <div class="section-title">Critères d'évaluation — tous satisfaits</div>
+    <ul class="critere-list">
+      <li>
+        <span class="check">✓</span>
+        <div>
+          <span class="critere-label">Les rôles respectifs d'HTML et de CSS sont explicités</span>
+          <span class="critere-detail">index.html = structure uniquement. styles/*.css = mise en forme uniquement. Aucun style dans le HTML lui-même.</span>
+        </div>
+      </li>
+      <li>
+        <span class="check">✓</span>
+        <div>
+          <span class="critere-label">La structure HTML est fonctionnelle</span>
+          <span class="critere-detail">La page s'affiche correctement dans tous les navigateurs. Déployée en ligne sur Vercel, accessible 24h/24.</span>
+        </div>
+      </li>
+      <li>
+        <span class="check">✓</span>
+        <div>
+          <span class="critere-label">La structure HTML est cohérente</span>
+          <span class="critere-detail">Balises sémantiques utilisées partout : &lt;section&gt;, &lt;h1&gt;/&lt;h2&gt;, &lt;ul&gt;/&lt;li&gt;, &lt;figure&gt;/&lt;figcaption&gt;, attributs aria-label pour l'accessibilité.</span>
+        </div>
+      </li>
+      <li>
+        <span class="check">✓</span>
+        <div>
+          <span class="critere-label">Les règles CSS sont fonctionnelles et liées à la page HTML</span>
+          <span class="critere-detail">Chaque classe CSS utilisée dans index.html a sa définition dans les fichiers CSS. Toutes les balises ont au moins une règle.</span>
+        </div>
+      </li>
+      <li>
+        <span class="check">✓</span>
+        <div>
+          <span class="critere-label">Suit les prescriptions et consignes reçues</span>
+          <span class="critere-detail">Tous les livrables du brief sont présents. J'ai suivi les ressources proposées (OpenClassrooms, MDN) et cherché par moi-même pour aller plus loin.</span>
+        </div>
+      </li>
+      <li>
+        <span class="check">✓</span>
+        <div>
+          <span class="critere-label">Organisation des tâches en fonction des contraintes</span>
+          <span class="critere-detail">Maquette Figma réalisée avant le développement. Travail en étapes : recto → verso → responsive → performance. Déploiement continu sur Vercel pour tester à chaque étape.</span>
+        </div>
+      </li>
+    </ul>
+  </section>
+
+  <!-- ORGANISATION -->
+  <section class="section">
+    <div class="section-title">Comment je me suis organisée — 2 jours</div>
+    <div class="orga-note">
+      Lève-tôt de nature, je commence mes journées de travail très tôt le matin.
+      J'ai suivi une progression logique : <strong>concevoir avant de coder</strong>,
+      puis <strong>structurer avant de mettre en forme</strong>.
+    </div>
+    <div class="orga-days">
+
+      <div class="orga-day-col">
+        <div class="day-header">
+          <span class="day-num">Jour 1</span>
+          <span class="day-theme">Brief · Maquette · HTML</span>
+        </div>
+        <div class="day-timeline">
+          <div class="tl-item">
+            <div class="tl-dot"></div>
+            <div class="tl-content">
+              <span class="tl-moment">Matin</span>
+              <strong>Lecture du brief + auto-formation</strong>
+              <p>Analyse des livrables, exemples fournis, ressources OpenClassrooms / MDN</p>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot"></div>
+            <div class="tl-content">
+              <span class="tl-moment">Matinée</span>
+              <strong>Maquette Figma</strong>
+              <p>Recto + Verso sur 3 breakpoints (Desktop / Tablette / Mobile), prototype interactif avec réactions</p>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot"></div>
+            <div class="tl-content">
+              <span class="tl-moment">Après-midi</span>
+              <strong>Structure HTML — index.html</strong>
+              <p>Toutes les balises du brief : <code>&lt;h1&gt;</code>, <code>&lt;img&gt;</code>, <code>&lt;ul&gt;&lt;li&gt;</code>, <code>&lt;a&gt;</code> — sections sémantiques recto + verso</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="orga-day-col">
+        <div class="day-header day-header--2">
+          <span class="day-num">Jour 2</span>
+          <span class="day-theme">CSS · JavaScript · Déploiement</span>
+        </div>
+        <div class="day-timeline">
+          <div class="tl-item">
+            <div class="tl-dot tl-dot--2"></div>
+            <div class="tl-content">
+              <span class="tl-moment">Très tôt le matin</span>
+              <strong>CSS — globals.css</strong>
+              <p>Variables <code>:root</code>, polices auto-hébergées, reset, règles de base sur toutes les balises (body, h1, ul, img, a…)</p>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot tl-dot--2"></div>
+            <div class="tl-content">
+              <span class="tl-moment">Matinée</span>
+              <strong>CSS — components.css</strong>
+              <p>Flip 3D, colonnes recto/verso, accordéon, animations flottantes, onglets compétences</p>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot tl-dot--2"></div>
+            <div class="tl-content">
+              <span class="tl-moment">Après-midi</span>
+              <strong>CSS — utilities.css (responsive)</strong>
+              <p><code>@media</code> tablette ≤ 768 px, mobile ≤ 600 px — grille 1 colonne portrait sur mobile</p>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot tl-dot--2"></div>
+            <div class="tl-content">
+              <span class="tl-moment">Fin d'après-midi</span>
+              <strong>JavaScript — script.js</strong>
+              <p>Flip au clic, accordéon exclusif, onglets avec pagination, modale "Plus d'infos"</p>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot tl-dot--2"></div>
+            <div class="tl-content">
+              <span class="tl-moment">Soir</span>
+              <strong>Tests + déploiement Vercel</strong>
+              <p>Lighthouse 93–97/100 mobile · 100/100 desktop, optimisations finales, mise en ligne</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CE QUE J'AI FAIT EN PLUS -->
+  <section class="section">
+    <div class="section-title">Ce que j'ai fait en plus — par curiosité</div>
+    <div class="bonus-grid">
+      <div class="bonus-card">
+        <h4>Flip 3D CSS</h4>
+        <p>La carte se retourne comme une vraie carte de visite grâce aux propriétés CSS <em>transform</em> et <em>backface-visibility</em>. Aucun JavaScript pour cela.</p>
+      </div>
+      <div class="bonus-card">
+        <h4>Accordéon interactif</h4>
+        <p>Les sections du verso s'ouvrent et se ferment au clic. Câblé en JavaScript, accessible au clavier avec attributs ARIA.</p>
+      </div>
+      <div class="bonus-card">
+        <h4>QR codes cliquables</h4>
+        <p>Deux QR codes SVG générés localement : l'un pointe vers mon portfolio, l'autre vers mon CV en ligne. Cliquables et scannables.</p>
+      </div>
+      <div class="bonus-card">
+        <h4>Polices auto-hébergées</h4>
+        <p>La police Raleway est stockée dans le projet. Pas de requête vers Google Fonts : le site charge plus vite et ne dépend d'aucun service externe.</p>
+      </div>
+      <div class="bonus-card">
+        <h4>Score Lighthouse</h4>
+        <p>93–97/100 mobile · 100/100 desktop · 100/100 accessibilité · 100/100 SEO. Le score mobile varie entre 93 et 97 selon la charge du serveur de test — variabilité normale du simulateur Lighthouse, pas du code.</p>
+      </div>
+      <div class="bonus-card">
+        <h4>Données structurées</h4>
+        <p>Balise JSON-LD Schema.org intégrée : les moteurs de recherche comprennent que la page décrit une personne (nom, email, téléphone, profils).</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER PAGE 2 -->
+  <footer class="doc-footer">
+    <span>Fanny Saez — fanny.saez.0486@gmail.com — 06.61.05.15.05</span>
+    <span>Page 2 / 3</span>
+    <span><a href="https://github.com/fannysaez">github.com/fannysaez</a></span>
+  </footer>
+
+</div>
+
+
+<!-- ══════════ PAGE 3 — EXTRAITS DE CODE ══════════ -->
+<div class="page">
+
+  <!-- HEADER PAGE 3 -->
+  <header class="doc-header">
+    <div class="doc-header-left">
+      <h1>Fanny <span>Saez</span> — Extraits de code</h1>
+      <p>HTML · CSS · JavaScript — expliqués en mots simples pour l'entretien</p>
+    </div>
+    <div class="doc-header-right">
+      <strong>24 juin 2026</strong><br>
+      <span class="badge badge-teal">HTML5 · CSS3 · JS</span>
+    </div>
+  </header>
+
+  <!-- EXTRAITS HTML -->
+  <section class="section">
+    <div class="section-title">Extraits HTML — la structure</div>
+    <div class="code-grid-2">
+
+      <div class="code-block">
+        <div class="code-label html-label">HTML · Balise titre — nom et prénom</div>
+        <pre><code><span class="tag">&lt;h1&gt;</span>Fanny <span class="tag">&lt;span</span> <span class="attr">class</span>=<span class="val">"accent"</span><span class="tag">&gt;</span>Saez<span class="tag">&lt;/span&gt;&lt;/h1&gt;</span>
+<span class="tag">&lt;p</span> <span class="attr">class</span>=<span class="val">"tagline"</span><span class="tag">&gt;</span>Développeuse Web &amp; Mobile<span class="tag">&lt;/p&gt;</span></code></pre>
+        <div class="code-explain">
+          <span class="pill html-pill">h1</span> = balise titre de niveau 1 (le plus important de la page) —
+          le jury voit mon nom en grand. <span class="pill html-pill">span</span> = zone de texte sans sémantique,
+          utilisée ici uniquement pour changer la couleur du nom de famille en CSS.
+          <span class="pill html-pill">p</span> = paragraphe, ici pour le métier.
+        </div>
+      </div>
+
+      <div class="code-block">
+        <div class="code-label html-label">HTML · Balise image — avatar</div>
+        <pre><code><span class="tag">&lt;img</span>
+  <span class="attr">src</span>=<span class="val">"assets/img/photo-fanny.webp"</span>
+  <span class="attr">alt</span>=<span class="val">"Portrait de Fanny Saez, développeuse"</span>
+  <span class="attr">class</span>=<span class="val">"avatar"</span>
+  <span class="attr">width</span>=<span class="val">"240"</span> <span class="attr">height</span>=<span class="val">"240"</span>
+<span class="tag">/&gt;</span></code></pre>
+        <div class="code-explain">
+          <span class="pill html-pill">img</span> = balise auto-fermante qui affiche une image.
+          <span class="pill attr-pill">src</span> = chemin vers le fichier.
+          <span class="pill attr-pill">alt</span> = texte alternatif lu par les lecteurs d'écran (accessibilité).
+          <span class="pill attr-pill">width/height</span> = dimensions pour éviter le décalage de page au chargement.
+        </div>
+      </div>
+
+      <div class="code-block">
+        <div class="code-label html-label">HTML · Liste raisons de rejoindre la CDA</div>
+        <pre><code><span class="tag">&lt;ul</span> <span class="attr">id</span>=<span class="val">"simplon-list"</span> <span class="attr">class</span>=<span class="val">"reason-list"</span><span class="tag">&gt;</span>
+  <span class="tag">&lt;li&gt;</span>La conception<span class="tag">&lt;/li&gt;</span>
+  <span class="tag">&lt;li&gt;</span>L'évolution<span class="tag">&lt;/li&gt;</span>
+  <span class="tag">&lt;li&gt;</span>L'écosystème<span class="tag">&lt;/li&gt;</span>
+  <span class="tag">&lt;li&gt;</span>Et après ?<span class="tag">&lt;/li&gt;</span>
+<span class="tag">&lt;/ul&gt;</span></code></pre>
+        <div class="code-explain">
+          <span class="pill html-pill">ul</span> = liste non ordonnée (unordered list) — les puces.
+          <span class="pill html-pill">li</span> = chaque élément de liste (list item).
+          C'est la section "Pourquoi la CDA ?" du verso : 4 raisons cliquables avec accordéon.
+        </div>
+      </div>
+
+      <div class="code-block">
+        <div class="code-label html-label">HTML · Liste profils en ligne avec liens</div>
+        <pre><code><span class="tag">&lt;ul</span> <span class="attr">class</span>=<span class="val">"profile-list"</span><span class="tag">&gt;</span>
+  <span class="tag">&lt;li&gt;</span>
+    <span class="tag">&lt;a</span> <span class="attr">href</span>=<span class="val">"https://github.com/fannysaez"</span>
+       <span class="attr">target</span>=<span class="val">"_blank"</span>
+       <span class="attr">rel</span>=<span class="val">"noopener noreferrer"</span><span class="tag">&gt;</span>
+      GitHub
+    <span class="tag">&lt;/a&gt;</span>
+  <span class="tag">&lt;/li&gt;</span>
+  <span class="tag">&lt;li&gt;</span><span class="tag">&lt;a</span> <span class="attr">href</span>=<span class="val">"https://linkedin.com/in/fannysaez"</span> ...<span class="tag">&gt;</span>LinkedIn<span class="tag">&lt;/a&gt;&lt;/li&gt;</span>
+  <span class="cmt">&lt;!-- + Instagram, Portfolio, CV, BambuCalc --&gt;</span>
+<span class="tag">&lt;/ul&gt;</span></code></pre>
+        <div class="code-explain">
+          <span class="pill html-pill">a</span> = lien hypertexte (anchor).
+          <span class="pill attr-pill">href</span> = adresse cible.
+          <span class="pill attr-pill">target="_blank"</span> = ouvre dans un nouvel onglet.
+          <span class="pill attr-pill">rel="noopener noreferrer"</span> = sécurité (évite que la page cible accède à notre onglet).
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- EXTRAITS CSS -->
+  <section class="section">
+    <div class="section-title">Extraits CSS — la mise en forme</div>
+    <div class="code-grid-3">
+
+      <div class="code-block">
+        <div class="code-label css-label">CSS · Règle sur h1</div>
+        <pre><code><span class="sel">h1</span> {
+  <span class="prop">font-size</span>: <span class="val2">clamp(2.3rem, 5vw, 3.2rem)</span>;
+  <span class="prop">font-weight</span>: <span class="val2">800</span>;
+  <span class="prop">color</span>: <span class="val2">var(--white)</span>;
+  <span class="prop">line-height</span>: <span class="val2">1.1</span>;
+}</code></pre>
+        <div class="code-explain">
+          <span class="pill css-pill">clamp()</span> = taille fluide : jamais moins de 2.3rem,
+          jamais plus de 3.2rem. S'adapte à la taille d'écran automatiquement.
+          <span class="pill css-pill">var(--white)</span> = variable CSS définie une seule fois dans <code>:root</code>.
+        </div>
+      </div>
+
+      <div class="code-block">
+        <div class="code-label css-label">CSS · Règles sur ul, li, a, img</div>
+        <pre><code><span class="sel">ul</span>  { <span class="prop">list-style</span>: <span class="val2">none</span>; }
+<span class="sel">li</span>  { <span class="prop">padding</span>: <span class="val2">0</span>; }
+<span class="sel">a</span>   { <span class="prop">text-decoration</span>: <span class="val2">none</span>; }
+<span class="sel">img</span> {
+  <span class="prop">display</span>: <span class="val2">block</span>;
+  <span class="prop">max-width</span>: <span class="val2">100%</span>;
+}</code></pre>
+        <div class="code-explain">
+          Le <strong>reset CSS</strong> : on enlève les styles par défaut du navigateur pour repartir d'une base propre.
+          <span class="pill css-pill">list-style: none</span> = supprime les puces.
+          <span class="pill css-pill">max-width: 100%</span> = l'image ne déborde jamais de son conteneur.
+        </div>
+      </div>
+
+      <div class="code-block">
+        <div class="code-label css-label">CSS · Responsive — @media mobile</div>
+        <pre><code><span class="cmt2">/* S'applique si écran ≤ 600 px */</span>
+<span class="at">@media</span> (<span class="prop">max-width</span>: <span class="val2">600px</span>) {
+  <span class="sel">h1</span> {
+    <span class="prop">font-size</span>: <span class="val2">1.75rem</span>;
+    <span class="prop">text-align</span>: <span class="val2">center</span>;
+  }
+  <span class="sel">.avatar-wrap</span> {
+    <span class="prop">width</span>: <span class="val2">120px</span>;
+    <span class="prop">height</span>: <span class="val2">120px</span>;
+  }
+}</code></pre>
+        <div class="code-explain">
+          <span class="pill css-pill">@media</span> = règle conditionnelle. Le CSS à l'intérieur
+          ne s'applique que si la condition est vraie (ici : écran ≤ 600 px).
+          C'est comme ça qu'on rend un site responsive sans JavaScript.
+        </div>
+      </div>
+
+      <div class="code-block">
+        <div class="code-label css-label">CSS · Flip 3D de la carte</div>
+        <pre><code><span class="sel">.card-3d</span> {
+  <span class="prop">transform-style</span>: <span class="val2">preserve-3d</span>;
+  <span class="prop">transition</span>: <span class="val2">transform 0.82s ease</span>;
+}
+<span class="sel">.card-3d.is-flipped</span> {
+  <span class="prop">transform</span>: <span class="val2">rotateY(180deg)</span>;
+}
+<span class="sel">.face--back</span> {
+  <span class="prop">transform</span>: <span class="val2">rotateY(180deg)</span>;
+  <span class="prop">backface-visibility</span>: <span class="val2">hidden</span>;
+}</code></pre>
+        <div class="code-explain">
+          Le retournement est 100 % CSS. <span class="pill css-pill">preserve-3d</span> = les enfants
+          vivent dans l'espace 3D. <span class="pill css-pill">backface-visibility: hidden</span> = on
+          cache la face quand elle est dos à l'écran. La classe <code>.is-flipped</code> est ajoutée par JavaScript au clic.
+        </div>
+      </div>
+
+      <div class="code-block">
+        <div class="code-label css-label">CSS · Variables et couleurs</div>
+        <pre><code><span class="sel">:root</span> {
+  <span class="prop">--teal</span>:    <span class="val2">#1ebfc1</span>;
+  <span class="prop">--dark</span>:    <span class="val2">#08131e</span>;
+  <span class="prop">--white</span>:   <span class="val2">#e6f2fb</span>;
+  <span class="prop">--muted</span>:   <span class="val2">#567585</span>;
+}
+<span class="sel">strong</span> { <span class="prop">color</span>: <span class="val2">var(--teal)</span>; }
+<span class="sel">body</span>   { <span class="prop">background</span>: <span class="val2">var(--dark)</span>; }</code></pre>
+        <div class="code-explain">
+          <span class="pill css-pill">:root</span> = la racine du document. On y déclare les
+          <strong>variables CSS</strong> avec <code>--nom</code>.
+          On les réutilise partout avec <code>var(--nom)</code>.
+          Changer une couleur ici la change sur tout le site.
+        </div>
+      </div>
+
+      <div class="code-block">
+        <div class="code-label css-label">CSS · Animation flottante (badges passions)</div>
+        <pre><code><span class="at">@keyframes</span> pb-float {
+  <span class="val2">0%, 100%</span> { <span class="prop">transform</span>: <span class="val2">translateY(0)</span>; }
+  <span class="val2">50%</span>       { <span class="prop">transform</span>: <span class="val2">translateY(-10px)</span>; }
+}
+<span class="sel">.passion-badge</span> {
+  <span class="prop">animation</span>: <span class="val2">pb-float 4.2s ease-in-out infinite</span>;
+}</code></pre>
+        <div class="code-explain">
+          <span class="pill css-pill">@keyframes</span> = on définit une animation image par image.
+          Ici, les icônes de passions montent et descendent en boucle.
+          <span class="pill css-pill">ease-in-out</span> = démarrage et arrêt progressifs (naturel).
+          <span class="pill css-pill">infinite</span> = tourne en boucle.
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- EXTRAITS JAVASCRIPT -->
+  <section class="section">
+    <div class="section-title">Extraits JavaScript — les comportements (bonus)</div>
+    <div class="code-grid-2">
+
+      <div class="code-block">
+        <div class="code-label js-label">JS · Retourner la carte au clic</div>
+        <pre><code><span class="cmt2">// On sélectionne la carte dans le HTML</span>
+<span class="js-kw">const</span> card = document.<span class="js-fn">querySelector</span>(<span class="val">'#card'</span>);
+
+<span class="cmt2">// On écoute le clic (et la touche Entrée)</span>
+card.<span class="js-fn">addEventListener</span>(<span class="val">'click'</span>, () => {
+  card.classList.<span class="js-fn">toggle</span>(<span class="val">'is-flipped'</span>);
+});
+
+card.<span class="js-fn">addEventListener</span>(<span class="val">'keydown'</span>, (e) => {
+  <span class="js-kw">if</span> (e.key === <span class="val">'Enter'</span> || e.key === <span class="val">' '</span>)
+    card.classList.<span class="js-fn">toggle</span>(<span class="val">'is-flipped'</span>);
+});</code></pre>
+        <div class="code-explain">
+          <span class="pill js-pill">querySelector</span> = sélectionner un élément HTML depuis JS.
+          <span class="pill js-pill">addEventListener</span> = écouter un événement (clic, touche...).
+          <span class="pill js-pill">classList.toggle</span> = ajouter la classe CSS si absente, la retirer si présente.
+          C'est ce toggle qui déclenche le flip 3D CSS.
+        </div>
+      </div>
+
+      <div class="code-block">
+        <div class="code-label js-label">JS · Ouvrir / fermer un item accordéon</div>
+        <pre><code><span class="cmt2">// Pour chaque bouton "+" dans les listes</span>
+<span class="js-kw">const</span> toggles = document.<span class="js-fn">querySelectorAll</span>(<span class="val">'.accordion-toggle'</span>);
+
+toggles.<span class="js-fn">forEach</span>(btn => {
+  btn.<span class="js-fn">addEventListener</span>(<span class="val">'click'</span>, (e) => {
+    e.<span class="js-fn">stopPropagation</span>(); <span class="cmt2">// ne pas retourner la carte</span>
+    <span class="js-kw">const</span> body = btn.closest(<span class="val">'.acc-item'</span>)
+                    .querySelector(<span class="val">'.acc-body'</span>);
+    <span class="js-kw">const</span> isOpen = btn.getAttribute(<span class="val">'aria-expanded'</span>) === <span class="val">'true'</span>;
+    btn.setAttribute(<span class="val">'aria-expanded'</span>, String(!isOpen));
+    body.classList.<span class="js-fn">toggle</span>(<span class="val">'hidden'</span>, isOpen);
+    btn.textContent = isOpen ? <span class="val">'+'</span> : <span class="val">'−'</span>;
+  });
+});</code></pre>
+        <div class="code-explain">
+          <span class="pill js-pill">querySelectorAll</span> = sélectionner plusieurs éléments (renvoie une liste).
+          <span class="pill js-pill">forEach</span> = faire la même chose pour chacun.
+          <span class="pill js-pill">stopPropagation</span> = empêcher le clic de "remonter" jusqu'à la carte (sinon elle se retournerait).
+          <span class="pill js-pill">aria-expanded</span> = attribut d'accessibilité : informe les lecteurs d'écran si ouvert ou fermé.
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FOOTER PAGE 3 -->
+  <footer class="doc-footer">
+    <span>Fanny Saez — fanny.saez.0486@gmail.com — 06.61.05.15.05</span>
+    <span>Page 3 / 3</span>
+    <span><a href="https://github.com/fannysaez/entretien-selection-cda">github.com/fannysaez</a></span>
+  </footer>
+
+</div>
+
+</body>
+</html>
