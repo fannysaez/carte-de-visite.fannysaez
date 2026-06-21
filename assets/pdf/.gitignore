@@ -1,0 +1,8 @@
+# On ignore absolument tout dans ce dossier
+*
+
+# Sauf le fichier .gitignore lui-même
+!.gitignore
+
+# Et sauf ton brief de carte de visite (on échappe les espaces avec des antislashs)
+!\[Positionnement\]\ Brief\ projet\ carte\ de\ visite.pdf
