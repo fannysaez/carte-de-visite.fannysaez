@@ -1,0 +1,161 @@
+
+/* =============================================
+   VARIABLES
+   ============================================= */
+:root {
+    --teal:     #1ebfc1;
+    --teal-10:  rgba(30, 191, 193, 0.10);
+    --teal-18:  rgba(30, 191, 193, 0.18);
+    --teal-28:  rgba(30, 191, 193, 0.28);
+    --teal-40:  rgba(30, 191, 193, 0.40);
+    --dark:     #08131e;
+    --dark2:    #0b1c2c;
+    --card-bg:  rgba(11, 28, 44, 0.90);
+    --white:    #e6f2fb;
+    --muted:    #567585;
+    --r:        1.25rem;
+}
+
+/* =============================================
+   FONTS — Raleway auto-hébergé
+   ============================================= */
+@font-face {
+    font-family: 'Raleway';
+    font-style: normal;
+    font-weight: 300;
+    font-display: swap;
+    src: url('../assets/fonts/raleway-v37-latin-300.woff2') format('woff2');
+}
+@font-face {
+    font-family: 'Raleway';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url('../assets/fonts/raleway-v37-latin-regular.woff2') format('woff2');
+}
+@font-face {
+    font-family: 'Raleway';
+    font-style: italic;
+    font-weight: 400;
+    font-display: swap;
+    src: url('../assets/fonts/raleway-v37-latin-italic.woff2') format('woff2');
+}
+@font-face {
+    font-family: 'Raleway';
+    font-style: normal;
+    font-weight: 600;
+    font-display: swap;
+    src: url('../assets/fonts/raleway-v37-latin-600.woff2') format('woff2');
+}
+@font-face {
+    font-family: 'Raleway';
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    src: url('../assets/fonts/raleway-v37-latin-700.woff2') format('woff2');
+}
+@font-face {
+    font-family: 'Raleway';
+    font-style: normal;
+    font-weight: 800;
+    font-display: swap;
+    src: url('../assets/fonts/raleway-v37-latin-800.woff2') format('woff2');
+}
+
+/* =============================================
+   RESET
+   ============================================= */
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* =============================================
+   BASE ELEMENTS
+   ============================================= */
+html {
+    font-size: 16px;
+    scroll-behavior: smooth;
+}
+
+iconify-icon {
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    vertical-align: -0.125em;
+    contain: layout style;
+}
+
+body {
+    font-family: 'Raleway', sans-serif;
+    background: var(--dark);
+    color: var(--white);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+p {
+    line-height: 1.6;
+}
+
+ul {
+    list-style: none;
+}
+
+li {
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+i {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+}
+
+span {
+    display: inline;
+}
+
+section {
+    width: 100%;
+}
+
+strong {
+    font-weight: 800;
+    color: var(--teal);
+}
+
+button {
+    font-family: 'Raleway', sans-serif;
+    cursor: pointer;
+    border: none;
+}
+
+figure {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+figcaption {
+    font-size: 0.65rem;
+    color: var(--muted);
+    text-align: center;
+    margin-top: 0.4rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+}
