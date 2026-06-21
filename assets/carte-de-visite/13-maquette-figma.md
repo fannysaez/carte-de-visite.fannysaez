@@ -27,9 +27,13 @@ Les captures ci-dessous illustrent les 3 breakpoints et les états clés de la c
 
 ## Mobile
 
-| Recto | Verso | Verso — À propos ouvert | Modale ⓘ ouverte |
-|:---:|:---:|:---:|:---:|
-| <img src="../maquette-figma/Mobile/Mobile%20%E2%80%94%20Recto.webp" width="170" alt="Mobile — Recto"> | <img src="../maquette-figma/Mobile/Mobile%20%E2%80%94%20Verso.webp" width="170" alt="Mobile — Verso"> | <img src="../maquette-figma/Mobile/Mobile%20%E2%80%94%20Verso%20(%C3%80%20propos%20ouvert).webp" width="170" alt="Mobile — Verso ouvert"> | <img src="../maquette-figma/Mobile/Mobile%20%E2%80%94%20Verso%20(Modale%20ouverte).webp" width="170" alt="Mobile — Modale"> |
+| Recto | Verso |
+|:---:|:---:|
+| <img src="../maquette-figma/Mobile/Mobile%20%E2%80%94%20Recto.webp" width="280" alt="Mobile — Recto"> | <img src="../maquette-figma/Mobile/Mobile%20%E2%80%94%20Verso.webp" width="280" alt="Mobile — Verso"> |
+
+| Verso — À propos ouvert | Modale ⓘ ouverte |
+|:---:|:---:|
+| <img src="../maquette-figma/Mobile/Mobile%20%E2%80%94%20Verso%20(%C3%80%20propos%20ouvert).webp" width="280" alt="Mobile — Verso ouvert"> | <img src="../maquette-figma/Mobile/Mobile%20%E2%80%94%20Verso%20(Modale%20ouverte).webp" width="280" alt="Mobile — Modale"> |
 
 ---
 
