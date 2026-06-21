@@ -32,6 +32,8 @@ carte-de-visite/
 │   │   ├── Desktop/                    # Recto · Verso · Verso ouvert
 │   │   ├── Mobile/                     # Recto · Verso · Verso ouvert
 │   │   └── Tablette/                   # Recto · Verso · Verso ouvert
+│   ├── w3/
+│   │   └── validator.w3.org.png        # Capture W3C Nu — 0 erreur · 0 warning
 │   ├── md/
 │   │   └── cahier-des-charges/
 │   │       └── cahier-des-charges.md   # Brief Simplon au format Markdown

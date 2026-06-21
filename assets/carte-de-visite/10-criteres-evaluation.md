@@ -9,7 +9,7 @@ Extrait du brief Simplon — vérification point par point.
 | Critère (brief) | Réponse dans le projet |
 |---|---|
 | Les rôles respectifs d'HTML et de CSS sont explicités | `index.html` = structure, `styles/` = mise en forme, `script.js` = comportement — séparation stricte |
-| La structure HTML est fonctionnelle | Page valide W3C ✅ (0 erreur — validator.w3.org), balises sémantiques, pas d'erreurs de rendu |
+| La structure HTML est fonctionnelle | Page valide W3C ✅ — 0 erreur · 0 warning ([validator.w3.org/nu](https://validator.w3.org/nu/?doc=https%3A%2F%2Fcartevisite-fannysaez.vercel.app%2F)) · capture : `assets/w3/validator.w3.org.png` |
 | La structure HTML est cohérente | Hiérarchie `h1` → `h2`, sections nommées (`#about`, `#skills`…), structure logique `#page` + `#card` |
 | Au moins 1 règle CSS par balise HTML | Chaque balise utilisée possède au minimum une règle dans `components.css` ou `globals.css` |
 | Les règles CSS sont fonctionnelles et liées à la page HTML | Toutes les classes/IDs CSS correspondent à des éléments présents dans `index.html` |
