@@ -1,0 +1,370 @@
+/* =============================================
+   DESKTOP (> 600px) — label Portfolio vertical
+   ============================================= */
+@media (min-width: 601px) {
+    .qr-group .qr-item {
+        flex-direction: row;
+        align-items: center;
+        gap: 0.45rem;
+    }
+
+    .qr-group figcaption {
+        order: -1;
+        writing-mode: vertical-rl;
+        transform: rotate(180deg);
+        margin-top: 0;
+        text-align: center;
+    }
+}
+
+/* =============================================
+   RESPONSIVE — TABLETTE (≤ 768px)
+   ============================================= */
+@media (max-width: 768px) {
+    .scene {
+        width: min(720px, 96vw);
+        height: min(460px, 88vh);
+    }
+
+    .col-left  { padding: 1.5rem 1.25rem; }
+    .col-right { padding: 1.5rem 1.5rem; }
+
+    .face-inner--back .col-left,
+    .face-inner--back .col-right { padding: 1.5rem 1.25rem; }
+
+    .avatar-wrap { width: 100px; height: 100px; }
+    .qr-code     { width: 58px;  height: 58px;  }
+    h1           { font-size: 1.55rem; }
+}
+
+/* =============================================
+   RESPONSIVE — MOBILE (≤ 600px)
+   ============================================= */
+@media (max-width: 600px) {
+
+    /* ── Scène portrait ── */
+    .scene {
+        width: 98vw;
+        height: min(720px, 94vh);
+    }
+
+    /* ── Ruban réduit ── */
+    .ribbon {
+        font-size: 0.54rem;
+        width: 143px;
+        top: 15px;
+        right: -42px;
+        padding: 5px 0;
+        letter-spacing: 0.09em;
+    }
+
+    /* ══════════════════════════════════════════════════════
+       RECTO — grille mobile portrait
+       ┌──────────────────────────────────────────────────┐
+       │              [Avatar 92px — centré]              │ ligne 1
+       ├──────────────────────────────────────────────────┤
+       │         Fanny Saez / Tagline / Traits            │ ligne 2
+       ├────────────────────┬─────────────────────────────┤
+       │   QR Portfolio     │      QR CV en ligne         │ ligne 3
+       ├────────────────────┴─────────────────────────────┤
+       │   Informatique · Natation · Impression 3D · …    │ ligne 4
+       ├──────────────────────────────────────────────────┤
+       │           [📧]    [📞]    [📍]                   │ ligne 5
+       └──────────────────────────────────────────────────┘
+       ══════════════════════════════════════════════════════ */
+
+    .face--front .face-inner {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto auto auto minmax(auto, 1fr) auto;
+        align-items: start;
+        align-content: start;
+        row-gap: 0;
+        padding: 1.5rem 0 0.75rem;
+        overflow-y: auto;
+        scrollbar-width: thin;
+        scrollbar-color: var(--teal-28) transparent;
+    }
+
+    /* Dissout les conteneurs col — enfants deviennent items de grille */
+    .face--front .col-left,
+    .face--front .col-right {
+        display: contents;
+    }
+
+    /* ── Avatar : ligne 1 / pleine largeur / centré ── */
+    .avatar-wrap {
+        grid-column: 1 / -1;
+        grid-row: 1;
+        width: 120px;
+        height: 120px;
+        justify-self: center;
+        margin-bottom: 0; /* annule le margin-bottom: 2.25rem du desktop */
+    }
+
+    /* ── Identité : ligne 2 / juste sous l'avatar ── */
+    .identity {
+        grid-column: 1 / -1;
+        grid-row: 2;
+        justify-self: center;
+        text-align: center;
+        padding: 0.35rem 1.25rem 0;
+        gap: 0.25rem;
+    }
+
+    h1      { font-size: 1.75rem; text-align: center; }
+    .tagline { font-size: 0.78rem; text-align: center; letter-spacing: 0.13em; }
+    .traits  { font-size: 0.64rem; text-align: center; margin-top: 0.15rem; white-space: nowrap; }
+
+    /* ── QR Portfolio : ligne 3 / col gauche — poussé vers le centre ── */
+    .qr-group {
+        grid-column: 1;
+        grid-row: 3;
+        display: flex;
+        align-self: start;
+        align-items: flex-start;
+        justify-content: flex-end;
+        padding: clamp(1.75rem, 8vh, 5rem) 1rem 0.3rem 0;
+    }
+
+    /* ── QR CV en ligne : ligne 3 / col droite — poussé vers le centre ── */
+    .qr-item--center {
+        grid-column: 2;
+        grid-row: 3;
+        justify-self: start;
+        align-self: start;
+        padding: clamp(1.75rem, 8vh, 5rem) 0 0.3rem 1rem;
+    }
+
+    /* QR codes — agrandis */
+    .qr-code,
+    .qr-code--lg {
+        width: clamp(105px, 33vw, 138px);
+        height: clamp(105px, 33vw, 138px);
+    }
+
+    /* ── Passion-list : ligne 4 / centrée dans le 1fr ── */
+    .passion-list {
+        grid-column: 1 / -1;
+        grid-row: 4;
+        align-self: center;
+        justify-content: center;
+        gap: 0.25rem;
+        padding: 0.75rem 0.75rem 0;
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+
+    .passion-list li {
+        font-size: 0.65rem;
+        padding: 0.14rem 0.4rem;
+    }
+
+    /* ── Tooltip ribbon — flotte au-dessus de la social bar ── */
+    .face--front:has(.ribbon:hover)::before {
+        top: auto;
+        bottom: 665px;
+        right: auto;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    /* ── Social bar : ligne 5 / juste sous les passions ── */
+    .social-bar {
+        grid-column: 1 / -1;
+        grid-row: 5;
+        align-self: auto;
+        margin-top: 0;
+        padding-top: 1rem;
+        border-top: 2px solid var(--teal-28);
+        justify-content: center;
+        gap: 1.75rem;
+    }
+
+    /* ══════════════════════════════════════════════════════
+       VERSO — 1 colonne scrollable (col-left au-dessus de col-right)
+       ══════════════════════════════════════════════════════ */
+
+    .face-inner--back {
+        grid-template-columns: 1fr;
+        overflow-y: auto;
+        align-content: start;
+        scrollbar-width: thin;
+        scrollbar-color: var(--teal-28) transparent;
+    }
+
+    .face-inner--back::-webkit-scrollbar { width: 3px; }
+    .face-inner--back::-webkit-scrollbar-thumb { background: var(--teal-28); border-radius: 2px; }
+
+    .face-inner--back .col-left {
+        border-right: none;
+        border-bottom: 1px solid var(--teal-18);
+        overflow-y: visible;
+        align-items: flex-start;
+        justify-content: flex-start;
+        padding: 0.9rem 1.25rem 0.75rem;
+    }
+
+    .face-inner--back .col-right {
+        padding: 0.9rem 1.25rem 0.75rem;
+        align-items: flex-start;
+        overflow-y: visible;
+        justify-content: flex-start;
+    }
+
+    .face-inner--back .col-left h2,
+    .face-inner--back .col-right h2 {
+        margin-bottom: 0.55rem;
+    }
+
+    .reason-list { gap: 0.55rem; margin-top: 0.75rem; }
+    .acc-title   { font-size: 0.82rem; }
+    .acc-body    { font-size: 0.72rem; }
+    .acc-item    { gap: 0.2rem; }
+
+    /* ── Section verso — espacement ── */
+    #about   { padding-bottom: 1.25rem; }
+    /* #simplon { padding-top: 0.5rem; } */
+    #skills     { margin-top: 1rem; }
+    .tab-widget { margin-top: 0.75rem; }
+    #profiles   { padding-top: 0; margin-top: 2.5rem; }
+
+    .skill-panel { max-height: none; }
+
+    .tag-list {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.32rem;
+    }
+
+    .tag-list li span {
+        font-size: 0.67rem;
+        padding: 0.16rem 0.28rem;
+    }
+
+    /* ── Profils en ligne — icônes sur une ligne ── */
+    .profile-list {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        gap: 0;
+        flex-wrap: nowrap;
+        margin-top: 0.75rem;
+    }
+
+    .profile-list li { width: auto; }
+
+    .profile-list li a {
+        width: 36px;
+        height: 36px;
+        padding: 0;
+        border-radius: 50%;
+        justify-content: center;
+        font-size: 0.9rem;
+        position: relative;
+        gap: 0;
+    }
+
+    .profile-list li a iconify-icon { font-size: 1rem; width: 1rem; }
+
+    .profile-list li a span { display: none; }
+
+    .profile-list li a::after {
+        content: attr(data-tooltip);
+        position: absolute;
+        bottom: calc(100% + 8px);
+        left: 50%;
+        transform: translateX(-50%) translateY(4px);
+        background: rgba(8, 19, 30, 0.97);
+        color: var(--teal);
+        font-size: 0.62rem;
+        font-weight: 700;
+        font-family: 'Raleway', sans-serif;
+        white-space: nowrap;
+        padding: 0.3rem 0.65rem;
+        border-radius: 0.4rem;
+        border: 1px solid var(--teal-28);
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.2s ease, transform 0.2s ease;
+        z-index: 10;
+    }
+
+    .profile-list li a:hover::after,
+    .profile-list li a:focus-visible::after {
+        opacity: 1;
+        transform: translateX(-50%) translateY(0);
+    }
+
+    /* ── Desk-deco masqué / mob-deco visible ── */
+    .desk-deco    { display: none; }
+    .verso-status { display: none; }
+
+    .mob-deco {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        height: 72px;
+        overflow: hidden;
+        padding: 0 1.25rem;
+    }
+
+    .mob-dot {
+        position: absolute;
+        width: 4px;
+        height: 4px;
+        border-radius: 50%;
+        background: var(--teal);
+        animation: mob-dot 3s ease-in-out infinite;
+    }
+
+    .mob-dot:nth-child(1) { top: 18%; left: 6%;  }
+    .mob-dot:nth-child(2) { top: 72%; left: 18%; width: 3px; height: 3px; animation-delay: 0.5s; }
+    .mob-dot:nth-child(3) { top: 25%; left: 88%; animation-delay: 1s; }
+    .mob-dot:nth-child(4) { top: 78%; left: 80%; width: 3px; height: 3px; animation-delay: 1.5s; }
+    .mob-dot:nth-child(5) { top: 12%; left: 52%; width: 3px; height: 3px; animation-delay: 2s; }
+    .mob-dot:nth-child(6) { top: 68%; left: 40%; width: 2px; height: 2px; animation-delay: 2.5s; }
+
+    @keyframes mob-dot {
+        0%, 100% { opacity: 0.15; transform: scale(1); }
+        50%       { opacity: 0.75; transform: scale(1.8); box-shadow: 0 0 5px var(--teal-40); }
+    }
+
+    .typewriter-wrap {
+        display: inline-flex;
+        align-items: center;
+    }
+
+    .typewriter {
+        display: inline-block;
+        white-space: nowrap;
+        overflow: hidden;
+        font-size: 0.62rem;
+        font-weight: 700;
+        color: var(--teal);
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        border-right: 1.5px solid var(--teal);
+        width: 0;
+        animation: mob-type 3s steps(30, end) 0.8s forwards, mob-cursor 0.65s step-end infinite;
+    }
+
+    @keyframes mob-type   { to { width: 30ch; } }
+    @keyframes mob-cursor { 50% { border-right-color: transparent; } }
+}
+
+/* =============================================
+   RESPONSIVE MODALE — MOBILE (≤ 600px)
+   ============================================= */
+@media (max-width: 600px) {
+    #acc-modal {
+        max-width: calc(100% - 2rem);
+        max-height: 75vh;
+    }
+
+    .modal-inner {
+        max-height: 75vh;
+    }
+}

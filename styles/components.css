@@ -1,0 +1,1237 @@
+/* =============================================
+   BACKGROUND
+   ============================================= */
+.bg-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    background:
+        radial-gradient(ellipse 65% 60% at 10% 50%, rgba(30, 191, 193, 0.09) 0%, transparent 58%),
+        radial-gradient(ellipse 50% 45% at 90% 15%, rgba(30, 191, 193, 0.05) 0%, transparent 52%),
+        linear-gradient(158deg, #08131e 0%, #0b1f30 42%, #07101c 100%);
+}
+
+/* =============================================
+   PAGE WRAPPER
+   ============================================= */
+#page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.25rem;
+    padding: 1.5rem 1rem;
+    width: 100%;
+}
+
+/* =============================================
+   SCENE — format paysage
+   ============================================= */
+.scene {
+    perspective: 2400px;
+    width: min(860px, 96vw);
+    height: min(520px, 90vh);
+}
+
+/* =============================================
+   FLIP CARD
+   ============================================= */
+.card-3d {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.82s cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: pointer;
+}
+
+.card-3d.is-flipped {
+    transform: rotateY(180deg);
+}
+
+/* =============================================
+   FACES
+   ============================================= */
+.face {
+    position: absolute;
+    inset: 0;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    background: var(--card-bg);
+    border: 1px solid var(--teal-28);
+    border-radius: var(--r);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    box-shadow:
+        0 30px 70px rgba(0, 0, 0, 0.55),
+        0 0 0 1px rgba(30, 191, 193, 0.04),
+        inset 0 1px 0 rgba(255, 255, 255, 0.04);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.face--back {
+    transform: rotateY(180deg);
+}
+
+/* =============================================
+   FACE INNER — grille 2 colonnes (paysage)
+   ============================================= */
+.face-inner {
+    flex: 1;
+    min-height: 0;
+    display: grid;
+    grid-template-columns: 1fr 1.8fr;
+    overflow: hidden;
+}
+
+.face-inner--back {
+    grid-template-columns: 1.15fr 1fr;
+}
+
+/* =============================================
+   COLONNES
+   ============================================= */
+.col-left {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 2rem 1.5rem;
+    border-right: 1px solid var(--teal-18);
+    gap: 0;
+    overflow: hidden;
+}
+
+.col-right {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2rem 2.25rem;
+    gap: 0;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: var(--teal-28) transparent;
+}
+
+.col-right::-webkit-scrollbar { width: 3px; }
+.col-right::-webkit-scrollbar-track { background: transparent; }
+.col-right::-webkit-scrollbar-thumb { background: var(--teal-28); border-radius: 2px; }
+
+/* Verso : colonnes avec scroll indépendant */
+.face-inner--back .col-left {
+    align-items: flex-start;
+    justify-content: flex-start;
+    overflow-y: auto;
+    padding: 2rem 1.75rem;
+    gap: 0;
+    scrollbar-width: thin;
+    scrollbar-color: var(--teal-28) transparent;
+}
+
+.face-inner--back .col-left::-webkit-scrollbar { width: 3px; }
+.face-inner--back .col-left::-webkit-scrollbar-track { background: transparent; }
+.face-inner--back .col-left::-webkit-scrollbar-thumb { background: var(--teal-28); border-radius: 2px; }
+
+.face-inner--back .col-right {
+    justify-content: flex-start;
+    padding: 2rem 1.75rem;
+    gap: 0;
+}
+
+/* =============================================
+   RECTO — AVATAR
+   ============================================= */
+.avatar-wrap {
+    width: 165px;
+    height: 165px;
+    border-radius: 50%;
+    border: 3px solid var(--teal);
+    box-shadow:
+        0 0 0 7px var(--teal-10),
+        0 0 38px var(--teal-18),
+        0 8px 25px rgba(0, 0, 0, 0.4);
+    overflow: hidden;
+    background: var(--dark2);
+    flex-shrink: 0;
+    margin-bottom: 3.5rem;
+}
+
+.avatar {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* =============================================
+   RECTO — QR CODES
+   ============================================= */
+.qr-group {
+    display: flex;
+    gap: 1.25rem;
+    justify-content: center;
+    width: 100%;
+}
+
+.qr-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.qr-item a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: inherit;
+    cursor: pointer;
+    transition: opacity 0.18s, transform 0.18s;
+}
+
+.qr-item a:hover .qr-code,
+.qr-item a:focus-visible .qr-code {
+    border-color: var(--teal);
+    transform: scale(1.05);
+    box-shadow: 0 0 0 3px var(--teal-28), 0 0 18px var(--teal-40);
+    filter: brightness(1.12);
+}
+
+.qr-item a:hover figcaption,
+.qr-item a:focus-visible figcaption {
+    color: var(--teal);
+    letter-spacing: 0.1em;
+}
+
+.qr-code {
+    width: 108px;
+    height: 108px;
+    border: 1px solid var(--teal-28);
+    border-radius: 0.5rem;
+    display: block;
+    background: var(--dark2);
+}
+
+/* =============================================
+   RECTO — BLOC IDENTITÉ (h1 + tagline groupés)
+   ============================================= */
+.identity {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.3rem;
+    text-align: center;
+}
+
+h1 {
+    font-size: clamp(2.3rem, 5vw, 3.2rem);
+    font-weight: 800;
+    letter-spacing: 0.04em;
+    color: var(--white);
+    line-height: 1.1;
+}
+
+.accent {
+    color: var(--teal);
+}
+
+.tagline {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--teal);
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+}
+
+.location {
+    font-size: 0.9rem;
+    color: var(--muted);
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+.location i {
+    color: var(--teal);
+    font-size: 0.82rem;
+}
+
+.traits {
+    font-size: 0.88rem;
+    color: var(--muted);
+    font-style: italic;
+    letter-spacing: 0.06em;
+    margin-top: 0.6rem;
+}
+
+/* =============================================
+   RECTO — RIBBON (coin supérieur droit)
+   ============================================= */
+.ribbon {
+    position: absolute;
+    top: 26px;
+    right: -36px;
+    width: 155px;
+    background: var(--teal-28);
+    border-top: 1px solid var(--teal-40);
+    border-bottom: 1px solid var(--teal-40);
+    text-align: center;
+    padding: 9px 0;
+    transform: rotate(45deg);
+    font-size: 0.58rem;
+    font-weight: 800;
+    letter-spacing: 0.13em;
+    text-transform: uppercase;
+    color: var(--teal);
+    z-index: 5;
+    cursor: default;
+    backdrop-filter: blur(8px);
+    box-shadow: 0 3px 14px rgba(30, 191, 193, 0.2);
+}
+
+.ribbon i {
+    font-size: 0.7rem;
+    color: var(--teal);
+    margin-right: 0.25rem;
+}
+
+.face--front:has(.ribbon:hover)::before {
+    content: "Bac+2 \00b7  Niveau 5 \00b7  Simplon oct. 2025";
+    position: absolute;
+    top: 12px;
+    right: 165px;
+    background: rgba(8, 19, 30, 0.97);
+    color: var(--teal);
+    font-size: 0.62rem;
+    font-weight: 700;
+    font-family: 'Raleway', sans-serif;
+    white-space: nowrap;
+    padding: 0.3rem 0.65rem;
+    border-radius: 0.4rem;
+    border: 1px solid var(--teal-28);
+    pointer-events: none;
+    z-index: 20;
+}
+
+.face--front:has(.ribbon:hover)::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+    border-left: 5px solid rgba(8, 19, 30, 0.97);
+    top: 21px;
+    right: 160px;
+    pointer-events: none;
+    z-index: 21;
+}
+
+/* =============================================
+   RECTO — QR CV (col-right, centré)
+   ============================================= */
+.qr-item--center {
+    align-self: center;
+}
+
+.qr-code--lg {
+    width: 120px;
+    height: 120px;
+}
+
+/* =============================================
+   RECTO — PASSIONS
+   ============================================= */
+.passion-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.45rem;
+    justify-content: center;
+}
+
+.passion-list li {
+    padding: 0.25rem 0.8rem;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 2rem;
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: var(--white);
+    transition: background 0.2s ease, border-color 0.2s ease, transform 0.18s ease;
+}
+
+.passion-list li:hover {
+    background: var(--teal-10);
+    border-color: var(--teal-40);
+    transform: translateY(-1px);
+}
+
+/* =============================================
+   RECTO — BARRE SOCIALE
+   ============================================= */
+.social-bar {
+    display: flex;
+    gap: 1.1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding-top: 1.25rem;
+    margin-top: auto;
+    border-top: 2px solid var(--teal-28);
+    width: 100%;
+}
+
+.social-btn {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background: var(--teal-10);
+    border: 1px solid var(--teal-28);
+    color: var(--teal);
+    transition: background 0.22s ease, transform 0.2s ease, border-color 0.22s ease;
+    flex-shrink: 0;
+}
+
+.social-btn iconify-icon {
+    font-size: 1rem;
+    color: var(--teal);
+}
+
+.social-btn:hover {
+    background: var(--teal-28);
+    border-color: var(--teal);
+    transform: translateY(-3px);
+}
+
+span.social-btn {
+    cursor: default;
+}
+
+.social-btn::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: calc(100% + 9px);
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(8, 19, 30, 0.97);
+    color: var(--teal);
+    font-size: 0.62rem;
+    font-weight: 700;
+    font-family: 'Raleway', sans-serif;
+    white-space: nowrap;
+    padding: 0.3rem 0.65rem;
+    border-radius: 0.4rem;
+    border: 1px solid var(--teal-28);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+    transform: translateX(-50%) translateY(4px);
+}
+
+.social-btn:hover::after {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+}
+
+.social-btn::before {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 5px solid rgba(8, 19, 30, 0.97);
+    bottom: calc(100% + 4px);
+    left: 50%;
+    transform: translateX(-50%) translateY(4px);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+    z-index: 11;
+}
+
+.social-btn:hover::before {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+}
+
+/* =============================================
+   CARTE CLIQUABLE + FOOTER COPYRIGHT
+   ============================================= */
+.card-footer {
+    width: 100%;
+    padding: 0.65rem;
+    background: var(--teal-10);
+    border-top: 1px solid var(--teal-18);
+    border-radius: 0 0 var(--r) var(--r);
+    text-align: center;
+    font-size: 0.65rem;
+    font-weight: 600;
+    color: var(--muted);
+    letter-spacing: 0.08em;
+    flex-shrink: 0;
+}
+
+/* =============================================
+   VERSO — SECTIONS
+   ============================================= */
+.face-inner--back .col-left section {
+    flex: 0 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 0.5rem 0;
+}
+
+.face-inner--back .col-right section {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0.5rem 0;
+}
+
+#skills {
+    border-bottom: 1px solid var(--teal-18);
+    justify-content: flex-start;
+    padding-bottom: 1.1rem;
+}
+
+#profiles {
+    justify-content: flex-start;
+    padding-top: 0.75rem;
+}
+
+#about {
+    border-bottom: 1px solid var(--teal-18);
+    justify-content: flex-start;
+    padding-bottom: 1.2rem;
+}
+
+#simplon {
+    border-bottom: 1px solid var(--teal-18);
+    justify-content: flex-start;
+    padding-top: 1.5rem;
+    padding-bottom: 1.2rem;
+}
+
+#motivation {
+    border-bottom: 1px solid var(--teal-18);
+    justify-content: flex-start;
+    padding-top: 1.5rem;
+    padding-bottom: 1.2rem;
+}
+
+.face-inner--back .col-left h2,
+.face-inner--back .col-right h2 {
+    margin-top: 0;
+    margin-bottom: 1.2rem;
+}
+
+h2 {
+    font-size: 0.65rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: var(--teal);
+    display: flex;
+    align-items: center;
+    gap: 0.45rem;
+    margin-bottom: 0.75rem;
+}
+
+h2 i {
+    font-size: 0.7rem;
+    opacity: 0.9;
+}
+
+/* =============================================
+   VERSO — À PROPOS
+   ============================================= */
+#about p {
+    font-size: 0.86rem;
+    color: var(--white);
+    opacity: 0.88;
+    line-height: 1.65;
+    text-align: justify;
+}
+
+/* =============================================
+   VERSO — RAISONS
+   ============================================= */
+.reason-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
+    padding-top: 0.20rem;
+}
+
+.reason-list li {
+    font-size: 0.9rem;
+    color: var(--white);
+    padding-left: 1.1rem;
+    position: relative;
+    line-height: 1.55;
+    opacity: 0.9;
+}
+
+.reason-list li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.55em;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: var(--teal);
+    box-shadow: 0 0 6px rgba(30, 191, 193, 0.65);
+}
+
+/* =============================================
+   VERSO — ACCORDÉON PAR ITEM
+   ============================================= */
+.acc-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+}
+
+.acc-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5rem;
+    width: 100%;
+}
+
+.acc-title {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    color: var(--muted);
+    font-weight: 700;
+    font-size: 0.88rem;
+    flex: 1;
+    min-width: 0;
+}
+
+.acc-title iconify-icon {
+    font-size: 0.8rem;
+    flex-shrink: 0;
+}
+
+.acc-body {
+    font-size: 0.75rem;
+    font-style: italic;
+    color: var(--white);
+    opacity: 0.85;
+    line-height: 1.45;
+    transition: opacity 0.15s ease;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.acc-body.hidden {
+    display: none;
+}
+
+.accordion-toggle {
+    background: transparent;
+    border: 1px solid var(--teal-28);
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    min-width: 24px;
+    font-size: 0.95rem;
+    color: var(--teal);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    padding: 0;
+    line-height: 1;
+    transition: background 0.2s ease, border-color 0.2s ease;
+    flex-shrink: 0;
+}
+
+.accordion-toggle:hover {
+    background: var(--teal-18);
+    border-color: var(--teal);
+}
+
+/* ── LED : bullet existant comme indicateur actif ── */
+.reason-list li::before {
+    opacity: 0.35;
+    transition: box-shadow 0.25s ease, opacity 0.25s ease;
+}
+
+.reason-list li:has(.accordion-toggle[aria-expanded="true"])::before {
+    opacity: 1;
+    box-shadow: 0 0 8px var(--teal), 0 0 16px var(--teal-40);
+}
+
+.accordion-toggle[aria-expanded="true"] {
+    background: var(--teal-18);
+    border-color: var(--teal);
+    box-shadow: 0 0 8px var(--teal-40);
+}
+
+/* =============================================
+   VERSO — SKILL TABS
+   ============================================= */
+.tab-widget {
+    display: flex;
+    flex-direction: column;
+}
+
+.skill-tabs {
+    display: flex;
+    gap: 3px;
+    padding-left: 2px;
+    margin-bottom: 0;
+}
+
+.skill-tab {
+    flex: 1;
+    padding: 0.3rem 0.6rem;
+    min-height: 1.5rem;
+    font-size: 0.6rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    background: var(--teal-10);
+    border: 1px solid var(--teal-28);
+    border-bottom: none;
+    border-radius: 0.4rem 0.4rem 0 0;
+    color: var(--muted);
+    cursor: pointer;
+    margin-bottom: -1px;
+    position: relative;
+    z-index: 1;
+    transition: background 0.2s ease, color 0.2s ease;
+}
+
+.skill-tab:hover {
+    background: var(--teal-18);
+    color: var(--white);
+}
+
+.skill-tab.active {
+    background: var(--dark2);
+    border-color: var(--teal-40);
+    color: var(--teal);
+    z-index: 2;
+}
+
+.skill-panel {
+    border: 1px solid var(--teal-40);
+    border-radius: 0 0.5rem 0.5rem 0.5rem;
+    padding: 0.6rem 0.65rem;
+    background: rgba(11, 28, 44, 0.6);
+    position: relative;
+    z-index: 1;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: var(--teal-28) transparent;
+}
+
+.skill-panel::-webkit-scrollbar { width: 3px; }
+.skill-panel::-webkit-scrollbar-thumb { background: var(--teal-28); border-radius: 2px; }
+
+/* =============================================
+   VERSO — PAGINATION TAGS
+   ============================================= */
+.skill-pagination {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    margin-top: 0.8rem;
+    padding-top: 0.55rem;
+    border-top: 1px solid var(--teal-18);
+}
+
+.skill-pagination button {
+    background: var(--teal-10);
+    border: 1px solid var(--teal-28);
+    color: var(--teal);
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    font-size: 0.85rem;
+    line-height: 1;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s ease;
+}
+
+.skill-pagination button:hover:not(:disabled) {
+    background: var(--teal-28);
+}
+
+.skill-pagination button:disabled {
+    opacity: 0.3;
+    cursor: default;
+}
+
+.skill-page-info {
+    font-size: 0.62rem;
+    font-weight: 700;
+    color: var(--muted);
+    letter-spacing: 0.08em;
+}
+
+/* =============================================
+   VERSO — TAGS COMPÉTENCES
+   ============================================= */
+.tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.45rem;
+}
+
+.tag-list li {
+    background: rgba(30, 191, 193, 0.15);
+    border: 1px solid var(--teal-40);
+    border-radius: 2rem;
+    transition: background 0.2s ease, transform 0.18s ease;
+}
+
+.tag-list li:hover {
+    background: rgba(30, 191, 193, 0.28);
+    transform: translateY(-1px);
+}
+
+.tag-list li span {
+    display: flex;
+    justify-content: center;
+    padding: 0.22rem 0.4rem;
+    font-size: 0.72rem;
+    font-weight: 700;
+    color: var(--teal);
+    white-space: nowrap;
+}
+
+/* =============================================
+   VERSO — PROFILS
+   ============================================= */
+.profile-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.55rem;
+    margin-top: 0.25rem;
+}
+
+.profile-list li {
+    width: 100%;
+}
+
+.profile-list li a {
+    display: flex;
+    align-items: center;
+    gap: 0.38rem;
+    padding: 0.35rem 0.75rem;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 0.5rem;
+    color: var(--white);
+    font-size: 0.76rem;
+    font-weight: 600;
+    transition: background 0.2s ease, border-color 0.2s ease, transform 0.18s ease;
+}
+
+.profile-list li a iconify-icon {
+    color: var(--teal);
+    font-size: 0.84rem;
+    width: 0.95rem;
+}
+
+.profile-list li a span {
+    color: var(--white);
+    transition: color 0.2s ease;
+}
+
+.profile-list li a:hover {
+    background: var(--teal-10);
+    border-color: var(--teal-40);
+    transform: translateY(-1px);
+}
+
+.profile-list li a:hover span {
+    color: var(--teal);
+}
+
+/* =============================================
+   VERSO — CONTACT
+   ============================================= */
+.contact-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.45rem;
+}
+
+.contact-list li {
+    display: flex;
+    align-items: center;
+}
+
+.contact-list li a {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--muted);
+    font-size: 0.78rem;
+    transition: color 0.22s ease;
+}
+
+.contact-list li a i {
+    color: var(--teal);
+    font-size: 0.78rem;
+    width: 0.95rem;
+}
+
+.contact-list li a span {
+    color: var(--muted);
+    transition: color 0.22s ease;
+}
+
+.contact-list li a:hover,
+.contact-list li a:hover span {
+    color: var(--teal);
+}
+
+/* =============================================
+   BOUTON PLUS D'INFOS (accordéon)
+   ============================================= */
+.acc-more-btn {
+    display: none;
+    align-self: flex-end;
+    background: none;
+    border: none;
+    color: var(--teal);
+    font-size: 0.72rem;
+    font-weight: 700;
+    cursor: pointer;
+    padding: 0.1rem 0;
+    font-family: 'Raleway', sans-serif;
+    letter-spacing: 0.04em;
+    transition: opacity 0.2s ease;
+}
+
+.acc-more-btn:hover {
+    opacity: 0.7;
+    text-decoration: underline;
+}
+
+/* =============================================
+   DESK DECO — icônes passions flottantes (desktop/tablette)
+   ============================================= */
+.desk-deco {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.deco-wrap {
+    position: relative;
+    width: 288px;
+    height: 147px;
+    flex-shrink: 0;
+}
+
+.passion-badge {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    font-size: 1.25rem;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.07);
+    border: 1px solid var(--teal-40);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--teal);
+    box-shadow: 0 0 12px rgba(30, 191, 193, 0.15);
+    animation: pb-float ease-in-out infinite;
+    cursor: default;
+    transition: box-shadow 0.2s, background 0.2s;
+}
+
+.passion-badge:hover {
+    background: rgba(30, 191, 193, 0.18);
+    box-shadow: 0 0 22px rgba(30, 191, 193, 0.4);
+}
+
+.passion-badge::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: calc(100% + 7px);
+    left: 50%;
+    transform: translateX(-50%) translateY(4px);
+    background: rgba(8, 19, 30, 0.97);
+    color: var(--teal);
+    font-size: 0.58rem;
+    font-weight: 700;
+    font-family: 'Raleway', sans-serif;
+    white-space: nowrap;
+    padding: 0.25rem 0.55rem;
+    border-radius: 0.35rem;
+    border: 1px solid var(--teal-28);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s, transform 0.2s;
+    z-index: 10;
+}
+
+.passion-badge:hover::after {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+}
+
+/* Flèche tooltip — pointe vers le bas (badges en haut) */
+.passion-badge::before {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 5px solid rgba(8, 19, 30, 0.97);
+    bottom: calc(100% + 2px);
+    left: 50%;
+    transform: translateX(-50%) translateY(4px);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s, transform 0.2s;
+    z-index: 11;
+}
+
+.passion-badge:hover::before {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+}
+
+.pb-1 { top: 18px; left: 18px;  animation-duration: 4.2s; animation-delay: 0s;   }
+.pb-2 { top: 79px; left: 64px;  animation-duration: 5.1s; animation-delay: 0.6s; }
+.pb-3 { top: 18px; left: 119px; animation-duration: 4.7s; animation-delay: 1.2s; }
+.pb-4 { top: 79px; left: 174px; animation-duration: 5.4s; animation-delay: 1.8s; }
+.pb-5 { top: 18px; left: 220px; animation-duration: 4.4s; animation-delay: 0.9s; }
+
+/* Impression 3D — tooltip en bas à gauche */
+.pb-2::after  { bottom: auto; top: calc(100% + 7px); left: 0; transform: translateX(0) translateY(-4px); }
+.pb-2:hover::after { opacity: 1; transform: translateX(0) translateY(0); }
+.pb-2::before { border-top: none; border-bottom: 5px solid rgba(8, 19, 30, 0.97); bottom: auto; top: calc(100% + 2px); left: 20px; transform: translateX(0) translateY(-4px); }
+.pb-2:hover::before { opacity: 1; transform: translateX(0) translateY(0); }
+
+/* Scrapbooking — tooltip en dessous centré */
+.pb-4::after  { bottom: auto; top: calc(100% + 7px); transform: translateX(-50%) translateY(-4px); }
+.pb-4:hover::after { opacity: 1; transform: translateX(-50%) translateY(0); }
+.pb-4::before { border-top: none; border-bottom: 5px solid rgba(8, 19, 30, 0.97); bottom: auto; top: calc(100% + 2px); left: 50%; transform: translateX(-50%) translateY(-4px); }
+.pb-4:hover::before { opacity: 1; transform: translateX(-50%) translateY(0); }
+
+/* Développement — tooltip décalé à droite */
+.pb-5::after  { left: auto; right: 0; transform: translateX(0) translateY(4px); }
+.pb-5:hover::after { opacity: 1; transform: translateX(0) translateY(0); }
+.pb-5::before { left: auto; right: 20px; transform: translateX(0) translateY(4px); }
+.pb-5:hover::before { opacity: 1; transform: translateX(0) translateY(0); }
+
+@keyframes pb-float {
+    0%, 100% { transform: translateY(0) scale(1); }
+    50%       { transform: translateY(-10px) scale(1.05); }
+}
+
+/* =============================================
+   VERSO STATUS — badge disponibilité
+   ============================================= */
+.verso-status {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-top: auto;
+    padding-top: 0.9rem;
+    border-top: 1px solid var(--teal-18);
+    width: 100%;
+}
+
+.status-left {
+    display: flex;
+    align-items: center;
+    gap: 0.55rem;
+}
+
+.status-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--teal);
+    flex-shrink: 0;
+    margin-top: 0.1rem;
+    animation: status-pulse 2.2s ease-in-out infinite;
+}
+
+@keyframes status-pulse {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(30, 191, 193, 0.5); }
+    60%       { box-shadow: 0 0 0 7px rgba(30, 191, 193, 0); }
+}
+
+.status-label {
+    font-size: 0.62rem;
+    font-weight: 800;
+    color: var(--teal);
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+}
+
+.status-date {
+    font-size: 0.58rem;
+    color: var(--muted);
+    letter-spacing: 0.06em;
+    padding-top: 0.1rem;
+}
+
+/* =============================================
+   SECTION TOGGLE + COLLAPSE
+   ============================================= */
+.sec-toggle {
+    display: inline-flex;
+    align-items: center;
+    margin-left: auto;
+    background: none;
+    border: none;
+    color: var(--teal);
+    cursor: pointer;
+    padding: 0;
+    font-size: 0.8rem;
+    line-height: 1;
+    transition: transform 0.3s ease;
+    flex-shrink: 0;
+}
+
+.sec-toggle[aria-expanded="true"] {
+    transform: rotate(180deg);
+}
+
+.reason-list {
+    max-height: 600px;
+    overflow: hidden;
+    transition: max-height 0.35s ease, opacity 0.25s ease, padding-top 0.35s ease;
+    opacity: 1;
+}
+
+.reason-list.sec-collapsed {
+    max-height: 0;
+    opacity: 0;
+    padding-top: 0;
+}
+
+/* =============================================
+   MOB DECO — masqué par défaut (visible mobile via utilities.css)
+   ============================================= */
+.mob-deco {
+    display: none;
+}
+
+/* =============================================
+   MODALE — Plus d'infos
+   ============================================= */
+#acc-modal {
+    background: var(--card-bg);
+    border: 1px solid var(--teal-28);
+    border-radius: var(--r);
+    color: var(--white);
+    font-family: 'Raleway', sans-serif;
+    padding: 0;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin: 0;
+    max-width: 560px;
+    width: calc(100% - 2rem);
+    max-height: 80vh;
+    overflow: hidden;
+    box-shadow:
+        0 30px 70px rgba(0, 0, 0, 0.55),
+        0 0 0 1px rgba(30, 191, 193, 0.04),
+        inset 0 1px 0 rgba(255, 255, 255, 0.04);
+}
+
+#acc-modal::backdrop {
+    background: rgba(8, 19, 30, 0.80);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+}
+
+.modal-inner {
+    display: flex;
+    flex-direction: column;
+    max-height: 80vh;
+}
+
+.modal-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem;
+    padding: 1.25rem 1.5rem 1rem;
+    border-bottom: 1px solid var(--teal-18);
+    flex-shrink: 0;
+}
+
+.modal-title {
+    font-size: 0.9rem;
+    font-weight: 800;
+    color: var(--teal);
+    letter-spacing: 0.04em;
+    margin: 0;
+}
+
+.modal-close {
+    background: var(--teal-10);
+    border: 1px solid var(--teal-28);
+    border-radius: 50%;
+    width: 28px;
+    height: 28px;
+    min-width: 28px;
+    color: var(--teal);
+    font-size: 0.85rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background 0.2s ease, border-color 0.2s ease;
+    font-family: 'Raleway', sans-serif;
+    flex-shrink: 0;
+}
+
+.modal-close:hover {
+    background: var(--teal-28);
+    border-color: var(--teal);
+}
+
+.modal-text {
+    padding: 1.25rem 1.5rem 1.5rem;
+    font-size: 0.88rem;
+    font-style: italic;
+    color: var(--white);
+    opacity: 0.9;
+    line-height: 1.65;
+    overflow-y: auto;
+    text-align: justify;
+    scrollbar-width: thin;
+    scrollbar-color: var(--teal-28) transparent;
+}
+
+.modal-text::-webkit-scrollbar       { width: 3px; }
+.modal-text::-webkit-scrollbar-thumb { background: var(--teal-28); border-radius: 2px; }
