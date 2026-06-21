@@ -36,7 +36,7 @@
 | **Recto** | ![Desktop — Recto](assets/maquette-figma/Desktop/Desktop%20%E2%80%94%20Recto.webp) | ![Tablette — Recto](assets/maquette-figma/Tablette/Tablette%20%E2%80%94%20Recto.webp) | ![Mobile — Recto](assets/maquette-figma/Mobile/Mobile%20%E2%80%94%20Recto.webp) |
 | **Verso** | ![Desktop — Verso](assets/maquette-figma/Desktop/Desktop%20%E2%80%94%20Verso.webp) | ![Tablette — Verso](assets/maquette-figma/Tablette/Tablette%20%E2%80%94%20Verso.webp) | ![Mobile — Verso](assets/maquette-figma/Mobile/Mobile%20%E2%80%94%20Verso.webp) |
 
-→ Toutes les captures (accordéon ouvert inclus) : [13 — Maquette Figma](carte-de-visite/13-maquette-figma.md)
+→ Toutes les captures (accordéon ouvert inclus) : [13 — Maquette Figma](assets/carte-de-visite/13-maquette-figma.md)
 
 ---
 
@@ -50,21 +50,21 @@
 
 | # | Page | Contenu |
 |---|---|---|
-| 01 | [Présentation](carte-de-visite/01-presentation.md) | Contexte Simplon, brief client, objectif |
-| 02 | [Technologies](carte-de-visite/02-technologies.md) | Stack, Raleway auto-hébergé, absence de frameworks |
-| 03 | [Structure des fichiers](carte-de-visite/03-structure-fichiers.md) | Arborescence complète du projet |
-| 04 | [Recto](carte-de-visite/04-recto.md) | Avatar, identité, ribbon, passions, QR codes, barre sociale |
-| 05 | [Verso](carte-de-visite/05-verso.md) | Accordéon, compétences, profils en ligne |
-| 06 | [Architecture CSS](carte-de-visite/06-css-architecture.md) | globals / components / utilities, variables, flip 3D |
-| 07 | [JavaScript](carte-de-visite/07-javascript.md) | Flip card, accordéon exclusif global |
-| 08 | [Accessibilité](carte-de-visite/08-accessibilite.md) | Sémantique HTML5, ARIA, contraste |
-| 09 | [Performance](carte-de-visite/09-performance.md) | Lighthouse 100/97, optimisations appliquées |
-| 10 | [Critères d'évaluation](carte-de-visite/10-criteres-evaluation.md) | Brief Simplon — vérification point par point |
-| 11 | [Déploiement](carte-de-visite/11-deploiement.md) | Vercel, lancer en local |
-| 12 | [Explications techniques script.js](carte-de-visite/12-script-explications-techniques.md) | Lecture commentée ligne par ligne du JavaScript |
-| 13 | [Maquette Figma](carte-de-visite/13-maquette-figma.md) | Prototype Figma — captures Desktop / Tablette / Mobile |
-| 14 | [Polish Verso — 11 juin 2026](carte-de-visite/14-polish-verso.md) | Journal des modifications UI du 11 juin 2026 |
-| 15 | [Données structurées](carte-de-visite/15-schema-org.md) | Schema.org / JSON-LD — balise `Person`, propriétés, SEO |
+| 01 | [Présentation](assets/carte-de-visite/01-presentation.md) | Contexte Simplon, brief client, objectif |
+| 02 | [Technologies](assets/carte-de-visite/02-technologies.md) | Stack, Raleway auto-hébergé, absence de frameworks |
+| 03 | [Structure des fichiers](assets/carte-de-visite/03-structure-fichiers.md) | Arborescence complète du projet |
+| 04 | [Recto](assets/carte-de-visite/04-recto.md) | Avatar, identité, ribbon, passions, QR codes, barre sociale |
+| 05 | [Verso](assets/carte-de-visite/05-verso.md) | Accordéon, compétences, profils en ligne |
+| 06 | [Architecture CSS](assets/carte-de-visite/06-css-architecture.md) | globals / components / utilities, variables, flip 3D |
+| 07 | [JavaScript](assets/carte-de-visite/07-javascript.md) | Flip card, accordéon exclusif global |
+| 08 | [Accessibilité](assets/carte-de-visite/08-accessibilite.md) | Sémantique HTML5, ARIA, contraste |
+| 09 | [Performance](assets/carte-de-visite/09-performance.md) | Lighthouse 100/95, optimisations appliquées |
+| 10 | [Critères d'évaluation](assets/carte-de-visite/10-criteres-evaluation.md) | Brief Simplon — vérification point par point |
+| 11 | [Déploiement](assets/carte-de-visite/11-deploiement.md) | Vercel, lancer en local |
+| 12 | [Explications techniques script.js](assets/carte-de-visite/12-script-explications-techniques.md) | Lecture commentée ligne par ligne du JavaScript |
+| 13 | [Maquette Figma](assets/carte-de-visite/13-maquette-figma.md) | Prototype Figma — captures Desktop / Tablette / Mobile |
+| 14 | [Polish Verso — 11 juin 2026](assets/carte-de-visite/14-polish-verso.md) | Journal des modifications UI du 11 juin 2026 |
+| 15 | [Données structurées](assets/carte-de-visite/15-schema-org.md) | Schema.org / JSON-LD — balise `Person`, propriétés, SEO |
 
 ---
 
@@ -89,5 +89,5 @@ Ouvrir `index.html` via **VS Code Live Server** ou tout serveur HTTP local.
 ---
 
 <p align="center">
-  <a href="carte-de-visite/01-presentation.md"><img src="https://img.shields.io/badge/-SUIVANT-0d8f91?style=for-the-badge" alt="Suivant"></a>
+  <a href="assets/carte-de-visite/01-presentation.md"><img src="https://img.shields.io/badge/-SUIVANT-0d8f91?style=for-the-badge" alt="Suivant"></a>
 </p>

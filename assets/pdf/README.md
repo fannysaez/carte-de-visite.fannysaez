@@ -18,7 +18,7 @@ Il est accessible à l'adresse : **carte-de-visite-fannysaez.vercel.app**
 
 | Fichiers HTML | Fichiers CSS | Score Lighthouse | Accessibilité | Déployé sur | Breakpoints |
 |:---:|:---:|:---:|:---:|:---:|:---:|
-| 1 fichier<br>`index.html` | 3 fichiers<br>`globals · components · utilities` | **93–97 / 100** | **100 / 100** | Vercel<br>en ligne 24h/24 | 3<br>Mobile · Tablette · Desktop |
+| 1 fichier<br>`index.html` | 3 fichiers<br>`globals · components · utilities` | **95 / 100** | **100 / 100** | Vercel<br>en ligne 24h/24 | 3<br>Mobile · Tablette · Desktop |
 
 ---
 
@@ -115,7 +115,7 @@ Le site s'adapte automatiquement à la taille de l'écran : téléphone, tablett
 | **Accordéon interactif** | Les sections du verso s'ouvrent et se ferment au clic. Câblé en JavaScript, accessible au clavier avec attributs ARIA. |
 | **QR codes cliquables** | Deux QR codes SVG générés localement : l'un pointe vers mon portfolio, l'autre vers mon CV en ligne. Cliquables et scannables. |
 | **Polices auto-hébergées** | La police Raleway est stockée dans le projet. Pas de requête vers Google Fonts : le site charge plus vite et ne dépend d'aucun service externe. |
-| **Score Lighthouse** | 93–97/100 mobile · 100/100 desktop · 100/100 accessibilité · 100/100 SEO. Le score mobile varie entre 93 et 97 selon la charge du serveur de test — variabilité normale du simulateur Lighthouse, pas du code. |
+| **Score Lighthouse** | 95/100 mobile · 100/100 desktop · 100/100 accessibilité · 100/100 SEO. Le score mobile varie entre 93 et 97 selon la charge du serveur de test — variabilité normale du simulateur Lighthouse, pas du code. |
 | **Données structurées** | Balise JSON-LD Schema.org intégrée : les moteurs de recherche comprennent que la page décrit une personne (nom, email, téléphone, profils). |
 
 *Fanny Saez — fanny.saez.0486@gmail.com — 06.61.05.15.05 · Page 2 / 3 · [github.com/fannysaez](https://github.com/fannysaez)*

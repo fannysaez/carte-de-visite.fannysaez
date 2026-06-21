@@ -28,7 +28,7 @@ Dépasser le brief minimal (une page statique) en livrant une réalisation qui d
 
 - La maîtrise de HTML5 sémantique et CSS3 avancé (flip 3D, variables, grid/flexbox)
 - Un design soigné et cohérent (palette, typographie, dark mode)
-- Une attention portée à l'accessibilité (ARIA) et à la performance (Lighthouse 100/97)
+- Une attention portée à l'accessibilité (ARIA) et à la performance (Lighthouse 100/95)
 - Une organisation de code professionnelle (découpage CSS en 3 fichiers, JS propre)
 
 ---
@@ -40,5 +40,5 @@ Dépasser le brief minimal (une page statique) en livrant une réalisation qui d
 ---
 
 <p align="center">
-  <a href="../README.md"><img src="https://img.shields.io/badge/-PR%C3%89C%C3%89DENT-0d8f91?style=for-the-badge" alt="Précédent"></a> &nbsp;&nbsp; <a href="02-technologies.md"><img src="https://img.shields.io/badge/-SUIVANT-0d8f91?style=for-the-badge" alt="Suivant"></a>
+  <a href="../../README.md"><img src="https://img.shields.io/badge/-PR%C3%89C%C3%89DENT-0d8f91?style=for-the-badge" alt="Précédent"></a> &nbsp;&nbsp; <a href="02-technologies.md"><img src="https://img.shields.io/badge/-SUIVANT-0d8f91?style=for-the-badge" alt="Suivant"></a>
 </p>

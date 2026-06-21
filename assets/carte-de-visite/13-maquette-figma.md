@@ -9,7 +9,7 @@ Les captures ci-dessous illustrent les 3 breakpoints et les deux faces de la car
 
 | Recto | Verso | Verso — À propos ouvert |
 |:---:|:---:|:---:|
-| ![Desktop — Recto](../assets/maquette-figma/Desktop/Desktop%20%E2%80%94%20Recto.webp) | ![Desktop — Verso](../assets/maquette-figma/Desktop/Desktop%20%E2%80%94%20Verso.webp) | ![Desktop — Verso ouvert](../assets/maquette-figma/Desktop/Desktop%20%E2%80%94%20Verso%20(%C3%80%20propos%20ouvert).webp) |
+| ![Desktop — Recto](../maquette-figma/Desktop/Desktop%20%E2%80%94%20Recto.webp) | ![Desktop — Verso](../maquette-figma/Desktop/Desktop%20%E2%80%94%20Verso.webp) | ![Desktop — Verso ouvert](../maquette-figma/Desktop/Desktop%20%E2%80%94%20Verso%20(%C3%80%20propos%20ouvert).webp) |
 
 ---
 
@@ -17,7 +17,7 @@ Les captures ci-dessous illustrent les 3 breakpoints et les deux faces de la car
 
 | Recto | Verso | Verso — À propos ouvert |
 |:---:|:---:|:---:|
-| ![Tablette — Recto](../assets/maquette-figma/Tablette/Tablette%20%E2%80%94%20Recto.webp) | ![Tablette — Verso](../assets/maquette-figma/Tablette/Tablette%20%E2%80%94%20Verso.webp) | ![Tablette — Verso ouvert](../assets/maquette-figma/Tablette/Tablette%20%E2%80%94%20Verso%20(%C3%80%20propos%20ouvert).webp) |
+| ![Tablette — Recto](../maquette-figma/Tablette/Tablette%20%E2%80%94%20Recto.webp) | ![Tablette — Verso](../maquette-figma/Tablette/Tablette%20%E2%80%94%20Verso.webp) | ![Tablette — Verso ouvert](../maquette-figma/Tablette/Tablette%20%E2%80%94%20Verso%20(%C3%80%20propos%20ouvert).webp) |
 
 ---
 
@@ -25,7 +25,7 @@ Les captures ci-dessous illustrent les 3 breakpoints et les deux faces de la car
 
 | Recto | Verso | Verso — À propos ouvert |
 |:---:|:---:|:---:|
-| ![Mobile — Recto](../assets/maquette-figma/Mobile/Mobile%20%E2%80%94%20Recto.webp) | ![Mobile — Verso](../assets/maquette-figma/Mobile/Mobile%20%E2%80%94%20Verso.webp) | ![Mobile — Verso ouvert](../assets/maquette-figma/Mobile/Mobile%20%E2%80%94%20Verso%20(%C3%80%20propos%20ouvert).webp) |
+| ![Mobile — Recto](../maquette-figma/Mobile/Mobile%20%E2%80%94%20Recto.webp) | ![Mobile — Verso](../maquette-figma/Mobile/Mobile%20%E2%80%94%20Verso.webp) | ![Mobile — Verso ouvert](../maquette-figma/Mobile/Mobile%20%E2%80%94%20Verso%20(%C3%80%20propos%20ouvert).webp) |
 
 ---
 
@@ -55,5 +55,5 @@ Les captures ci-dessous illustrent les 3 breakpoints et les deux faces de la car
 ---
 
 <p align="center">
-  <a href="12-script-explications-techniques.md"><img src="https://img.shields.io/badge/-PR%C3%89C%C3%89DENT-0d8f91?style=for-the-badge" alt="Précédent"></a> &nbsp;&nbsp; <a href="../README.md"><img src="https://img.shields.io/badge/-RETOUR-0d8f91?style=for-the-badge" alt="Retour"></a>
+  <a href="12-script-explications-techniques.md"><img src="https://img.shields.io/badge/-PR%C3%89C%C3%89DENT-0d8f91?style=for-the-badge" alt="Précédent"></a> &nbsp;&nbsp; <a href="../../README.md"><img src="https://img.shields.io/badge/-RETOUR-0d8f91?style=for-the-badge" alt="Retour"></a>
 </p>

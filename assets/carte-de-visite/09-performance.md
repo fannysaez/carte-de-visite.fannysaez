@@ -5,10 +5,10 @@
 | Contexte | Score |
 |---|---|
 | Desktop | **100 / 100** |
-| Mobile | **97 / 100** |
+| Mobile | **95 / 100** |
 
-![Lighthouse Desktop 100](../assets/lighthouse/Lighthouse%20100%20pour%20desktop.png)
-![Lighthouse Mobile 97](../assets/lighthouse/Lighthouse%2097%20pour%20mobile.png)
+![Lighthouse Desktop 100](../lighthouse/Lighthouse%20100%20pour%20desktop.png)
+![Lighthouse Mobile 95](../lighthouse/Lighthouse%2095%20pour%20mobile.png)
 
 ---
 
@@ -41,10 +41,11 @@ Les QR codes PNG externes (sans cache, 402 B chacun) ont été remplacés par de
 ```
 
 ### 4. `preload` des polices critiques
-Les variantes les plus utilisées (400-regular, 700) sont préchargées pour éviter le FOIT visible.
+Les variantes les plus utilisées (400-regular, 700, 600) sont préchargées pour éviter le FOIT visible et les décalages de mise en page.
 ```html
 <link rel="preload" href="assets/fonts/raleway-v37-latin-700.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="assets/fonts/raleway-v37-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/raleway-v37-latin-600.woff2" as="font" type="font/woff2" crossorigin>
 ```
 
 ### 5. `preconnect` vers api.iconify.design (−300 ms LCP)
@@ -64,6 +65,25 @@ Resize direct depuis la source haute résolution (qualité 75) — net sur Retin
 
 ### 8. `font-display: swap`
 Affichage immédiat d'une police de substitution pendant le chargement de Raleway — évite le FOIT (Flash of Invisible Text).
+
+### 9. Preload Raleway 600 — correction CLS `col-right` (juin 2026)
+La variante 600 était absente du `preload` : elle arrivait après le premier rendu et provoquait un décalage de mise en page (`CLS 0.222`) sur la colonne droite du verso.
+
+```html
+<!-- Ajout juin 2026 -->
+<link rel="preload" href="assets/fonts/raleway-v37-latin-600.woff2" as="font" type="font/woff2" crossorigin>
+```
+
+Résultat : CLS `0.222 → 0` sur `col-right`.
+
+### 10. Animations GPU-composites (juin 2026)
+PageSpeed signalait 7 animations non-composées forçant des repaints CPU à chaque frame.
+
+| Élément | Propriété avant | Correctif |
+|---|---|---|
+| `.mob-dot` × 6 | `box-shadow` dans `@keyframes` | → `filter: drop-shadow(...)` — composité GPU |
+| `.typewriter-wrap::after` | `border-right-color: transparent` | → `opacity: 0` — composité GPU |
+| `.typewriter` | — | `will-change: width` ajouté comme hint navigateur |
 
 ---
 
