@@ -4,7 +4,6 @@
 
 | Balise | Usage |
 |---|---|
-| `<main>` | Contenu principal de la page |
 | `<section>` | Chaque zone thématique (about, simplon, skills, profiles) |
 | `<h1>` | Nom de la candidate — titre principal |
 | `<h2>` | Titres de section sur le verso |
@@ -19,10 +18,16 @@
 
 | Attribut | Où | Valeur |
 |---|---|---|
-| `aria-label` | Boutons accordéon | `"Développer [titre]"` |
-| `aria-expanded` | Boutons accordéon | `"false"` / `"true"` |
-| `aria-controls` | Boutons accordéon | ID du panneau contrôlé |
-| `aria-labelledby` | `<section>` | ID du `<h2>` correspondant |
+| `role="group"` | `#card` | Groupe carte recto/verso |
+| `role="region"` | `.verso-status` | Zone de statut avec label |
+| `role="tablist"` / `role="tab"` / `role="tabpanel"` | Skill tabs | Navigation à onglets accessible |
+| `aria-selected` | Boutons skill tabs | `"true"` / `"false"` |
+| `aria-label` | Carte, boutons accordéon, sections | Description de l'action ou du contenu |
+| `aria-expanded` | Boutons accordéon + sec-toggle | `"false"` / `"true"` |
+| `aria-controls` | Boutons accordéon + sec-toggle | ID du panneau contrôlé |
+| `aria-labelledby` | `<section>`, `<dialog>` | ID du titre correspondant |
+| `aria-modal="true"` | `<dialog>` | Indique une fenêtre modale native |
+| `aria-live="polite"` | `#modal-title` | Titre injecté dynamiquement par JS |
 | `aria-hidden="true"` | Icônes décoratives (`<iconify-icon>`) | Cachées aux lecteurs d'écran |
 | `alt` | `<img>` avatar et QR codes | Description textuelle |
 

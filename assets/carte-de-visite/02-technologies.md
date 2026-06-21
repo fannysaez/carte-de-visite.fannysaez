@@ -6,7 +6,7 @@
 |---|---|---|
 | HTML5 | — | Structure sémantique (section, figure, ul, button…) |
 | CSS3 | — | Flip 3D, variables custom, flexbox, grid, media queries |
-| JavaScript | Vanilla ES6 | Flip card + accordéon exclusif global |
+| JavaScript | Vanilla ES6 | Flip card · accordéon exclusif · sec-toggle · modale · filtres compétences |
 | [Iconify](https://iconify.design/) | Web component (`defer`) | Icônes (Font Awesome 6 via CDN Iconify) |
 | Raleway | v37 — auto-hébergé | Polices woff2 locales (6 graisses), zéro Google Fonts |
 | [Vercel](https://vercel.com/) | — | Déploiement continu depuis GitHub |

@@ -3,14 +3,14 @@
 ## Arborescence complète
 
 ```
-entretien-selection-cda/
+carte-de-visite/
 │
 ├── index.html                          # Page unique — structure recto/verso
-├── script.js                           # Flip card + accordéon exclusif
+├── script.js                           # Flip card · accordéon · sec-toggle · modale · filtres compétences
 │
-├── styles/                             # CSS découpé en 3 fichiers
-│   ├── globals.css                     # @imports + :root variables + @font-face + reset
-│   ├── components.css                  # Tous les composants UI
+├── styles/
+│   ├── globals.css                     # Variables :root + @font-face + reset + éléments de base
+│   ├── components.css                  # Tous les composants UI (desktop)
 │   └── utilities.css                   # Media queries (768px, 600px)
 │
 ├── assets/
@@ -22,33 +22,41 @@ entretien-selection-cda/
 │   │   ├── raleway-v37-latin-700.woff2
 │   │   └── raleway-v37-latin-800.woff2
 │   ├── img/
-│   │   └── photo-fanny.webp            # Photo de profil (format WebP)
+│   │   ├── photo-fanny.webp            # Photo de profil (format WebP)
+│   │   ├── qr-portfolio.svg            # QR code — Portfolio
+│   │   └── qr-cv.svg                   # QR code — CV en ligne
 │   ├── lighthouse/
-│   │   ├── Lighthouse 97 pour mobile.png
+│   │   ├── Lighthouse 95 pour mobile.png
 │   │   └── Lighthouse 100 pour desktop.png
 │   ├── maquette-figma/                 # Captures du prototype Figma (WebP)
 │   │   ├── Desktop/                    # Recto · Verso · Verso ouvert
 │   │   ├── Mobile/                     # Recto · Verso · Verso ouvert
 │   │   └── Tablette/                   # Recto · Verso · Verso ouvert
 │   ├── md/
-│   │   └── cahier-des-charges/         # Brief Simplon au format Markdown
-│   └── pdf/
-│       └── [Positionnement] Brief projet carte de visite.pdf
-│
-├── carte-de-visite/                    # Documentation du projet (ce dossier)
-│   ├── 01-presentation.md
-│   ├── 02-technologies.md
-│   ├── 03-structure-fichiers.md
-│   ├── 04-recto.md
-│   ├── 05-verso.md
-│   ├── 06-css-architecture.md
-│   ├── 07-javascript.md
-│   ├── 08-accessibilite.md
-│   ├── 09-performance.md
-│   ├── 10-criteres-evaluation.md
-│   ├── 11-deploiement.md
-│   ├── 12-script-explications-techniques.md
-│   └── 13-maquette-figma.md
+│   │   └── cahier-des-charges/
+│   │       └── cahier-des-charges.md   # Brief Simplon au format Markdown
+│   ├── pdf/
+│   │   ├── [Positionnement] Brief projet carte de visite.pdf
+│   │   ├── README.md                   # Dossier de présentation jury (Markdown)
+│   │   ├── README.pdf                  # Dossier de présentation jury (PDF)
+│   │   ├── presentation-jury.html      # Présentation jury 3 pages (HTML)
+│   │   └── presentation-jury.pdf       # Présentation jury 3 pages (PDF)
+│   └── carte-de-visite/               # Documentation du projet (ce dossier)
+│       ├── 01-presentation.md
+│       ├── 02-technologies.md
+│       ├── 03-structure-fichiers.md
+│       ├── 04-recto.md
+│       ├── 05-verso.md
+│       ├── 06-css-architecture.md
+│       ├── 07-javascript.md
+│       ├── 08-accessibilite.md
+│       ├── 09-performance.md
+│       ├── 10-criteres-evaluation.md
+│       ├── 11-deploiement.md
+│       ├── 12-script-explications-techniques.md
+│       ├── 13-maquette-figma.md
+│       ├── 14-polish-verso.md
+│       └── 15-schema-org.md
 │
 └── README.md
 ```
@@ -61,7 +69,7 @@ entretien-selection-cda/
 |---|---|
 | `index.html` | Structure HTML5 — carte recto et verso |
 | `script.js` | Comportements JS — flip + accordéon |
-| `styles/globals.css` | Point d'entrée CSS — importe les 2 autres |
+| `styles/globals.css` | Variables `:root`, `@font-face`, reset, éléments de base |
 | `styles/components.css` | Styles de tous les composants visuels |
 | `styles/utilities.css` | Responsive — règles `@media` uniquement |
 

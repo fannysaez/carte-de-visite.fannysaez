@@ -1,4 +1,4 @@
-# 14 — Données structurées (Schema.org / JSON-LD)
+# 15 — Données structurées (Schema.org / JSON-LD)
 
 ## Qu'est-ce que c'est ?
 
