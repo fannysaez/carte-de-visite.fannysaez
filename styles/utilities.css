@@ -329,12 +329,23 @@
 
     @keyframes mob-dot {
         0%, 100% { opacity: 0.15; transform: scale(1); }
-        50%       { opacity: 0.75; transform: scale(1.8); box-shadow: 0 0 5px var(--teal-40); }
+        50%       { opacity: 0.75; transform: scale(1.8); filter: drop-shadow(0 0 5px var(--teal-40)); }
     }
 
     .typewriter-wrap {
         display: inline-flex;
         align-items: center;
+    }
+
+    .typewriter-wrap::after {
+        content: '';
+        display: inline-block;
+        width: 1.5px;
+        height: 0.75em;
+        background: var(--teal);
+        flex-shrink: 0;
+        margin-left: 1px;
+        animation: mob-cursor 0.65s step-end infinite;
     }
 
     .typewriter {
@@ -346,13 +357,13 @@
         color: var(--teal);
         letter-spacing: 0.08em;
         text-transform: uppercase;
-        border-right: 1.5px solid var(--teal);
         width: 0;
-        animation: mob-type 3s steps(30, end) 0.8s forwards, mob-cursor 0.65s step-end infinite;
+        will-change: width;
+        animation: mob-type 3s steps(30, end) 0.8s forwards;
     }
 
     @keyframes mob-type   { to { width: 30ch; } }
-    @keyframes mob-cursor { 50% { border-right-color: transparent; } }
+    @keyframes mob-cursor { 50% { opacity: 0; } }
 }
 
 /* =============================================
