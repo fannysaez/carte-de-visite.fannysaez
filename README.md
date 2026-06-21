@@ -12,11 +12,11 @@
   <img src="https://img.shields.io/badge/Vercel-déployé-000000?style=flat-square&logo=vercel&logoColor=white" alt="Vercel">
   <img src="https://img.shields.io/badge/Figma-prototype-F24E1E?style=flat-square&logo=figma&logoColor=white" alt="Figma">
   <img src="https://img.shields.io/badge/Lighthouse-100%20desktop-0d8f91?style=flat-square&logo=lighthouse&logoColor=white" alt="Lighthouse 100">
-  <img src="https://img.shields.io/badge/Lighthouse-97%20mobile-0d8f91?style=flat-square&logo=lighthouse&logoColor=white" alt="Lighthouse 97">
+  <img src="https://img.shields.io/badge/Lighthouse-95%20mobile-0d8f91?style=flat-square&logo=lighthouse&logoColor=white" alt="Lighthouse 95">
 </p>
 
 <p align="center">
-  <a href="https://carte-de-visite-fannysaez.vercel.app"><strong>carte-de-visite-fannysaez.vercel.app</strong></a>
+  <a href="https://cartevisite-fannysaez.vercel.app"><strong>cartevisite-fannysaez.vercel.app/</strong></a>
 </p>
 
 ---
@@ -25,7 +25,7 @@
 
 | Desktop | Mobile |
 |:---:|:---:|
-| ![Lighthouse 100 desktop](assets/lighthouse/Lighthouse%20100%20pour%20desktop.png) | ![Lighthouse 95 mobile](assets/lighthouse/Lighthouse%2097%20pour%20mobile.png) |
+| ![Lighthouse 100 desktop](assets/lighthouse/Lighthouse%20100%20pour%20desktop.png) | ![Lighthouse 95 mobile](assets/lighthouse/Lighthouse%2095%20pour%20mobile.png) |
 
 ---
 
@@ -72,8 +72,8 @@
 
 ```bash
 # Cloner le dépôt
-git clone https://github.com/fannysaez/flip-carte-de-visite-recto-verso.git
-cd flip-carte-de-visite-recto-verso
+git clone https://github.com/fannysaez/carte-de-visite.fannysaez.git
+cd carte-de-visite.fannysaez
 ```
 
 Ouvrir `index.html` via **VS Code Live Server** ou tout serveur HTTP local.
