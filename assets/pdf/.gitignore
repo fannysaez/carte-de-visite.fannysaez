@@ -4,11 +4,5 @@
 # Sauf le fichier .gitignore lui-même
 !.gitignore
 
-# Brief Simplon
+# Brief Simplon uniquement
 !\[Positionnement\]\ Brief\ projet\ carte\ de\ visite.pdf
-
-# Dossier de présentation jury
-!README.md
-!README.pdf
-!presentation-jury.html
-!presentation-jury.pdf
