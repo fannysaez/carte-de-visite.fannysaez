@@ -1,7 +1,7 @@
-# 13 — Maquette Figma
+# 13 — Maquette Figma & Captures production
 
 Prototype interactif réalisé dans Figma — 15 frames, ~80 réactions.  
-Les captures ci-dessous illustrent les 3 breakpoints et les deux faces de la carte (accordéon ouvert inclus).
+Les captures ci-dessous illustrent les 3 breakpoints et les états clés de la carte (recto, verso, accordéon ouvert, modale ⓘ).
 
 ---
 
@@ -11,6 +11,10 @@ Les captures ci-dessous illustrent les 3 breakpoints et les deux faces de la car
 |:---:|:---:|:---:|
 | ![Desktop — Recto](../maquette-figma/Desktop/Desktop%20%E2%80%94%20Recto.webp) | ![Desktop — Verso](../maquette-figma/Desktop/Desktop%20%E2%80%94%20Verso.webp) | ![Desktop — Verso ouvert](../maquette-figma/Desktop/Desktop%20%E2%80%94%20Verso%20(%C3%80%20propos%20ouvert).webp) |
 
+| Modale ⓘ ouverte | Tooltip "Plus d'infos" |
+|:---:|:---:|
+| ![Desktop — Modale](../maquette-figma/Desktop/Desktop%20%E2%80%94%20Verso%20(Modale%20ouverte).webp) | ![Desktop — Tooltip](../maquette-figma/Desktop/Desktop%20%E2%80%94%20Verso%20(Tooltip%20Plus%20d'infos).webp) |
+
 ---
 
 ## Tablette
@@ -19,6 +23,10 @@ Les captures ci-dessous illustrent les 3 breakpoints et les deux faces de la car
 |:---:|:---:|:---:|
 | ![Tablette — Recto](../maquette-figma/Tablette/Tablette%20%E2%80%94%20Recto.webp) | ![Tablette — Verso](../maquette-figma/Tablette/Tablette%20%E2%80%94%20Verso.webp) | ![Tablette — Verso ouvert](../maquette-figma/Tablette/Tablette%20%E2%80%94%20Verso%20(%C3%80%20propos%20ouvert).webp) |
 
+| Modale ⓘ ouverte | |
+|:---:|:---:|
+| ![Tablette — Modale](../maquette-figma/Tablette/Tablette%20%E2%80%94%20Verso%20(Modale%20ouverte).webp) | |
+
 ---
 
 ## Mobile
@@ -26,6 +34,10 @@ Les captures ci-dessous illustrent les 3 breakpoints et les deux faces de la car
 | Recto | Verso | Verso — À propos ouvert |
 |:---:|:---:|:---:|
 | ![Mobile — Recto](../maquette-figma/Mobile/Mobile%20%E2%80%94%20Recto.webp) | ![Mobile — Verso](../maquette-figma/Mobile/Mobile%20%E2%80%94%20Verso.webp) | ![Mobile — Verso ouvert](../maquette-figma/Mobile/Mobile%20%E2%80%94%20Verso%20(%C3%80%20propos%20ouvert).webp) |
+
+| Modale ⓘ ouverte | |
+|:---:|:---:|
+| ![Mobile — Modale](../maquette-figma/Mobile/Mobile%20%E2%80%94%20Verso%20(Modale%20ouverte).webp) | |
 
 ---
 

@@ -29,14 +29,16 @@
 
 ---
 
-## Aperçu maquette Figma
+## Aperçu site en production
 
 | | Desktop | Tablette | Mobile |
 |:---:|:---:|:---:|:---:|
 | **Recto** | ![Desktop — Recto](assets/maquette-figma/Desktop/Desktop%20%E2%80%94%20Recto.webp) | ![Tablette — Recto](assets/maquette-figma/Tablette/Tablette%20%E2%80%94%20Recto.webp) | ![Mobile — Recto](assets/maquette-figma/Mobile/Mobile%20%E2%80%94%20Recto.webp) |
 | **Verso** | ![Desktop — Verso](assets/maquette-figma/Desktop/Desktop%20%E2%80%94%20Verso.webp) | ![Tablette — Verso](assets/maquette-figma/Tablette/Tablette%20%E2%80%94%20Verso.webp) | ![Mobile — Verso](assets/maquette-figma/Mobile/Mobile%20%E2%80%94%20Verso.webp) |
+| **Verso ouvert** | ![Desktop — Verso ouvert](assets/maquette-figma/Desktop/Desktop%20%E2%80%94%20Verso%20(%C3%80%20propos%20ouvert).webp) | ![Tablette — Verso ouvert](assets/maquette-figma/Tablette/Tablette%20%E2%80%94%20Verso%20(%C3%80%20propos%20ouvert).webp) | ![Mobile — Verso ouvert](assets/maquette-figma/Mobile/Mobile%20%E2%80%94%20Verso%20(%C3%80%20propos%20ouvert).webp) |
+| **Modale ⓘ** | ![Desktop — Modale](assets/maquette-figma/Desktop/Desktop%20%E2%80%94%20Verso%20(Modale%20ouverte).webp) | ![Tablette — Modale](assets/maquette-figma/Tablette/Tablette%20%E2%80%94%20Verso%20(Modale%20ouverte).webp) | ![Mobile — Modale](assets/maquette-figma/Mobile/Mobile%20%E2%80%94%20Verso%20(Modale%20ouverte).webp) |
 
-→ Toutes les captures (accordéon ouvert inclus) : [13 — Maquette Figma](assets/carte-de-visite/13-maquette-figma.md)
+→ Toutes les captures détaillées : [13 — Maquette Figma](assets/carte-de-visite/13-maquette-figma.md)
 
 ---
 

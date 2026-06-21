@@ -28,10 +28,10 @@ carte-de-visite/
 │   ├── lighthouse/
 │   │   ├── Lighthouse 95 pour mobile.png
 │   │   └── Lighthouse 100 pour desktop.png
-│   ├── maquette-figma/                 # Captures du prototype Figma (WebP)
-│   │   ├── Desktop/                    # Recto · Verso · Verso ouvert
-│   │   ├── Mobile/                     # Recto · Verso · Verso ouvert
-│   │   └── Tablette/                   # Recto · Verso · Verso ouvert
+│   ├── maquette-figma/                 # Captures site en production (WebP)
+│   │   ├── Desktop/                    # Recto · Verso · Verso ouvert · Modale · Tooltip
+│   │   ├── Mobile/                     # Recto · Verso · Verso ouvert · Modale
+│   │   └── Tablette/                   # Recto · Verso · Verso ouvert · Modale
 │   ├── w3/
 │   │   └── validator.w3.org.png        # Capture W3C Nu — 0 erreur · 0 warning
 │   ├── md/
