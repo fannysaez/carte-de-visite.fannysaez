@@ -57,6 +57,44 @@ Badges masqués (`display: none`) — frames Mobile non modifiées.
 
 ---
 
+## Polish UI — 21 juin 2026
+
+### Bouton ⓘ (acc-more-btn)
+Remplacement du texte "Plus d'infos →" par une icône circulaire `fa6-solid:circle-info` (22×22px).
+
+| Propriété | Avant | Après |
+|---|---|---|
+| Contenu | Texte "Plus d'infos →" | Icône `fa6-solid:circle-info` |
+| Style | Texte lien teal | Cercle 22×22px, fond teal-10, bordure teal-28 |
+| Tooltip | Aucun | "Plus d'infos" en dessous au hover |
+| Position | Bas droite de l'item | Inline après le texte tronqué (flex-row) |
+
+### Troncature JS des acc-body
+```js
+const TRUNC_LEN = 51; // coupe au dernier mot avant 51 chars
+// strip ponctuation finale + ajout " …"
+```
+- Texte court : affiché dans `.acc-body` (tronqué en JS au chargement)
+- Texte long : conservé dans `data-long`, affiché dans la modale ⓘ
+
+### Layout `.acc-item`
+Passage de `flex-direction: column` à `flex-direction: row; flex-wrap: wrap` :
+- `.acc-header` → `width: 100%` (reste sur sa propre ligne)
+- `.acc-body` → `order: 1; flex: 0 1 auto` (prend sa largeur naturelle)
+- `.acc-more-btn` → `order: 2; align-self: flex-start` (suit le texte)
+
+### Corrections W3C validator
+- Suppression trailing slashes sur balises void (`<meta>`, `<link>`)
+- `role="region"` ajouté sur `.verso-status` (aria-label invalide sans role)
+- `aria-live="polite"` sur `#modal-title` (heading vide rempli par JS)
+- `&nbsp;` dans le `<h3>` vide pour supprimer le warning "Empty heading"
+
+### Maquette Figma mise à jour
+- 30 textes acc-body tronqués (Desktop + Tablette + Mobile)
+- 33 boutons "Plus d'infos →" remplacés par ⓘ
+
+---
+
 <p align="center">
   <a href="13-maquette-figma.md"><img src="https://img.shields.io/badge/-PR%C3%89C%C3%89DENT-0d8f91?style=for-the-badge" alt="Précédent"></a> &nbsp;&nbsp; <a href="../../README.md"><img src="https://img.shields.io/badge/-RETOUR-0d8f91?style=for-the-badge" alt="Retour"></a>
 </p>

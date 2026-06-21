@@ -1,6 +1,28 @@
 # 07 — JavaScript
 
-Le fichier `script.js` contient deux comportements distincts, sans dépendance externe.
+Le fichier `script.js` contient plusieurs comportements indépendants, sans dépendance externe.
+
+---
+
+## 0. Troncature JS des acc-body
+
+Au chargement, chaque texte `.acc-body` est tronqué à **51 caractères** (coupure au dernier mot, ponctuation finale supprimée).
+
+```js
+const TRUNC_LEN = 51;
+
+document.querySelectorAll('.acc-body').forEach(function (body) {
+    const text = body.textContent.trim();
+    if (text.length <= TRUNC_LEN) return;
+    const cut = text.lastIndexOf(' ', TRUNC_LEN);
+    const trimmed = text.substring(0, cut > 0 ? cut : TRUNC_LEN).replace(/[,;.—–\-]+$/, '');
+    body.textContent = trimmed + ' …';
+});
+```
+
+- Exécuté avant toute interaction — le texte court est la seule version affichée
+- Le texte long complet reste disponible dans `data-long` (utilisé par la modale ⓘ)
+- Résultat item 1 : *"Titre Pro DWWM (Bac+2, niv. 5) obtenu chez Simplon …"*
 
 ---
 
@@ -83,9 +105,9 @@ document.querySelectorAll('.sec-toggle').forEach(function (btn) {
 
 ---
 
-## 4. Modale — Plus d'infos
+## 4. Modale — bouton ⓘ
 
-Chaque item d'accordéon expose un bouton `.acc-more-btn` qui ouvre une `<dialog>` native avec le texte long (`data-long`).
+Chaque item d'accordéon expose un bouton `.acc-more-btn` (icône `fa6-solid:circle-info`) qui ouvre une `<dialog>` native avec le texte long complet (`data-long`).
 
 ```js
 document.querySelectorAll('.acc-more-btn').forEach(function (btn) {

@@ -77,6 +77,13 @@ Conteneur des badges passions décoratifs (icônes desk deco) : `width: 288px; h
 - Géré dans `script.js` via `querySelectorAll('.accordion-toggle')`
 - **LED active** : le bullet `::before` de l'item ouvert s'illumine en teal avec glow via `:has([aria-expanded="true"])` — discret (opacity 0.35) à la fermeture
 
+### Texte tronqué + bouton ⓘ (juin 2026)
+
+- **Troncature JS** : chaque `.acc-body` est tronqué à **51 chars** au chargement (coupe au dernier mot, ponctuation finale strippée) — texte long conservé dans `data-long`
+- **Bouton ⓘ** : `.acc-more-btn` utilise l'icône `fa6-solid:circle-info` (22×22px, cercle teal) à la place du texte "Plus d'infos →"
+- **Layout** : `.acc-item` passe en `flex-direction: row; flex-wrap: wrap` — texte (order:1, flex: 0 1 auto) suivi du ⓘ (order:2)
+- **Tooltip** : "Plus d'infos" apparaît **en dessous** du ⓘ au hover (flèche pointant vers le haut), même pattern que `.social-btn`
+
 ---
 
 ## Responsive mobile (≤ 600px)
