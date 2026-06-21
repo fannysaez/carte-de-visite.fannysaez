@@ -9,11 +9,11 @@ Les captures ci-dessous illustrent les 3 breakpoints et les états clés de la c
 
 | Recto | Verso | Verso — À propos ouvert |
 |:---:|:---:|:---:|
-| ![Desktop — Recto](../maquette-figma/Desktop/Desktop%20%E2%80%94%20Recto.webp) | ![Desktop — Verso](../maquette-figma/Desktop/Desktop%20%E2%80%94%20Verso.webp) | ![Desktop — Verso ouvert](../maquette-figma/Desktop/Desktop%20%E2%80%94%20Verso%20(%C3%80%20propos%20ouvert).webp) |
+| <img src="../maquette-figma/Desktop/Desktop%20%E2%80%94%20Recto.webp" width="420" alt="Desktop — Recto"> | <img src="../maquette-figma/Desktop/Desktop%20%E2%80%94%20Verso.webp" width="420" alt="Desktop — Verso"> | <img src="../maquette-figma/Desktop/Desktop%20%E2%80%94%20Verso%20(%C3%80%20propos%20ouvert).webp" width="420" alt="Desktop — Verso ouvert"> |
 
 | Modale ⓘ ouverte | Tooltip "Plus d'infos" |
 |:---:|:---:|
-| ![Desktop — Modale](../maquette-figma/Desktop/Desktop%20%E2%80%94%20Verso%20(Modale%20ouverte).webp) | ![Desktop — Tooltip](../maquette-figma/Desktop/Desktop%20%E2%80%94%20Verso%20(Tooltip%20Plus%20d'infos).webp) |
+| <img src="../maquette-figma/Desktop/Desktop%20%E2%80%94%20Verso%20(Modale%20ouverte).webp" width="540" alt="Desktop — Modale"> | <img src="../maquette-figma/Desktop/Desktop%20%E2%80%94%20Verso%20(Tooltip%20Plus%20d'infos).webp" width="540" alt="Desktop — Tooltip"> |
 
 ---
 
@@ -21,11 +21,11 @@ Les captures ci-dessous illustrent les 3 breakpoints et les états clés de la c
 
 | Recto | Verso | Verso — À propos ouvert |
 |:---:|:---:|:---:|
-| ![Tablette — Recto](../maquette-figma/Tablette/Tablette%20%E2%80%94%20Recto.webp) | ![Tablette — Verso](../maquette-figma/Tablette/Tablette%20%E2%80%94%20Verso.webp) | ![Tablette — Verso ouvert](../maquette-figma/Tablette/Tablette%20%E2%80%94%20Verso%20(%C3%80%20propos%20ouvert).webp) |
+| <img src="../maquette-figma/Tablette/Tablette%20%E2%80%94%20Recto.webp" width="260" alt="Tablette — Recto"> | <img src="../maquette-figma/Tablette/Tablette%20%E2%80%94%20Verso.webp" width="260" alt="Tablette — Verso"> | <img src="../maquette-figma/Tablette/Tablette%20%E2%80%94%20Verso%20(%C3%80%20propos%20ouvert).webp" width="260" alt="Tablette — Verso ouvert"> |
 
 | Modale ⓘ ouverte | |
 |:---:|:---:|
-| ![Tablette — Modale](../maquette-figma/Tablette/Tablette%20%E2%80%94%20Verso%20(Modale%20ouverte).webp) | |
+| <img src="../maquette-figma/Tablette/Tablette%20%E2%80%94%20Verso%20(Modale%20ouverte).webp" width="360" alt="Tablette — Modale"> | |
 
 ---
 
@@ -33,11 +33,11 @@ Les captures ci-dessous illustrent les 3 breakpoints et les états clés de la c
 
 | Recto | Verso | Verso — À propos ouvert |
 |:---:|:---:|:---:|
-| ![Mobile — Recto](../maquette-figma/Mobile/Mobile%20%E2%80%94%20Recto.webp) | ![Mobile — Verso](../maquette-figma/Mobile/Mobile%20%E2%80%94%20Verso.webp) | ![Mobile — Verso ouvert](../maquette-figma/Mobile/Mobile%20%E2%80%94%20Verso%20(%C3%80%20propos%20ouvert).webp) |
+| <img src="../maquette-figma/Mobile/Mobile%20%E2%80%94%20Recto.webp" width="200" alt="Mobile — Recto"> | <img src="../maquette-figma/Mobile/Mobile%20%E2%80%94%20Verso.webp" width="200" alt="Mobile — Verso"> | <img src="../maquette-figma/Mobile/Mobile%20%E2%80%94%20Verso%20(%C3%80%20propos%20ouvert).webp" width="200" alt="Mobile — Verso ouvert"> |
 
 | Modale ⓘ ouverte | |
 |:---:|:---:|
-| ![Mobile — Modale](../maquette-figma/Mobile/Mobile%20%E2%80%94%20Verso%20(Modale%20ouverte).webp) | |
+| <img src="../maquette-figma/Mobile/Mobile%20%E2%80%94%20Verso%20(Modale%20ouverte).webp" width="280" alt="Mobile — Modale"> | |
 
 ---
 
