@@ -32,6 +32,9 @@ carte-de-visite/
 │   │   ├── Desktop/                    # Recto · Verso · Verso ouvert · Modale · Tooltip
 │   │   ├── Mobile/                     # Recto · Verso · Verso ouvert · Modale
 │   │   └── Tablette/                   # Recto · Verso · Verso ouvert · Modale
+│   ├── charte-graphique/
+│   │   ├── Charte graphique - carte de visite.pdf
+│   │   └── Charte graphique - carte de visite - complet.webp
 │   ├── w3/
 │   │   └── validator.w3.org.png        # Capture W3C Nu — 0 erreur · 0 warning
 │   ├── md/
@@ -58,7 +61,8 @@ carte-de-visite/
 │       ├── 12-script-explications-techniques.md
 │       ├── 13-maquette-figma.md
 │       ├── 14-polish-verso.md
-│       └── 15-schema-org.md
+│       ├── 15-schema-org.md
+│       └── 16-charte-graphique.md
 │
 └── README.md
 ```

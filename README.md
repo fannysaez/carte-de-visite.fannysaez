@@ -67,6 +67,7 @@
 | 13 | [Maquette Figma](assets/carte-de-visite/13-maquette-figma.md) | Prototype Figma — captures Desktop / Tablette / Mobile |
 | 14 | [Polish Verso — 11 juin 2026](assets/carte-de-visite/14-polish-verso.md) | Journal des modifications UI du 11 juin 2026 |
 | 15 | [Données structurées](assets/carte-de-visite/15-schema-org.md) | Schema.org / JSON-LD — balise `Person`, propriétés, SEO |
+| 16 | [Charte graphique](assets/carte-de-visite/16-charte-graphique.md) | Document de référence Figma — palette, typo, tokens, composants |
 
 ---
 
